@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姑姑">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="测试顺带笔记" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        webapi1｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2020/04/06/webapi1/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    测试顺带笔记
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>webapi1</h1>
+                    
+                    <span class="meta">
+                         作者 摸鱼侠
+                        <span>
+                          日期 2020-04-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            webapi1
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="day1"><a href="#day1" class="headerlink" title="day1"></a>day1</h1><h2 id="今日核心知识"><a href="#今日核心知识" class="headerlink" title="今日核心知识"></a>今日核心知识</h2><p><strong>注意：核心知识为必会点，每天晚上必须回头查看核心知识点是否学会，如有不会不清楚的要反馈</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">获取元素</span><br><span class="line">注册事件</span><br><span class="line">操作元素的属性</span><br></pre></td></tr></table></figure>
+
+<h2 id="1、回顾JS组成"><a href="#1、回顾JS组成" class="headerlink" title="1、回顾JS组成"></a>1、回顾JS组成</h2><h3 id="JavaScript组成：ECMA，DOM，BOM"><a href="#JavaScript组成：ECMA，DOM，BOM" class="headerlink" title="JavaScript组成：ECMA，DOM，BOM"></a><strong>JavaScript组成：ECMA，DOM，BOM</strong></h3><p>​    javascript：ECMAscript，DOM，BOM</p>
+<ul>
+<li><p>ECMAScript</p>
+<ul>
+<li>变量</li>
+<li>数据类型</li>
+<li>运算符</li>
+<li>分支语句、循环</li>
+<li>函数（创建函数、调用、参数、返回值）</li>
+<li>对象（Object、Array、Date、Math、基本包装（String、Number、Boolean））<ul>
+<li>属性和方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DOM</p>
+<blockquote>
+<p>文档对象模型</p>
+</blockquote>
+</li>
+<li><p>BOM</p>
+<ul>
+<li>浏览器对象模型</li>
+</ul>
+</li>
+</ul>
+<p>注意：DOM其实是属于BOM的一部分。在实际开发中，DOM操作比重多，而且重要。</p>
+<img src="img/BOM和DOM.jpg">
+
+<h3 id="API和weiAPIs"><a href="#API和weiAPIs" class="headerlink" title="API和weiAPIs"></a>API和weiAPIs</h3><ul>
+<li>API（==A==pplication ==P==rogramming ==I==nterface）应用程序编程==接口==（暴露出来的工具）。 </li>
+<li>webAPI：浏览器平台对外公开的提供操作浏览器和网页的接口（BOM、DOM）</li>
+<li>DOM：操作页面元素的方法</li>
+<li>BOM：操作浏览器的</li>
+</ul>
+<h2 id="2、DOM介绍"><a href="#2、DOM介绍" class="headerlink" title="2、DOM介绍"></a>2、DOM介绍</h2><h3 id="DOM的概念"><a href="#DOM的概念" class="headerlink" title="DOM的概念"></a>DOM的概念</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DOM - document object model  ：文档对象模型</span><br><span class="line"></span><br><span class="line">把整个网页当做一个对象看待，如果要单独操作某个标签，按照提供的方法去查找即可。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>My Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>My link<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">            My header</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="DOM-树"><a href="#DOM-树" class="headerlink" title="DOM 树"></a>DOM 树</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">文档树：浏览器在加载html文件时，会把文档、文档中的标签、属性、文本、注释转换成对象，然后按照标签的关系（父子、兄弟、祖孙）以树状结构存储到内存中。</span><br><span class="line"></span><br><span class="line">文档树中的对象，也被称为节点对象。</span><br><span class="line">节点对象的分类：文档（document） 、元素（标签转换的对象）、文本、属性、注释</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">DOM树&#x3D;&#x3D;&gt;文档树</span><br></pre></td></tr></table></figure>
+
+<img src="img/DOM树.jpg">
+
+<img src="img/文档树.png">
+
+<h3 id="学习DOM目的"><a href="#学习DOM目的" class="headerlink" title="学习DOM目的"></a>学习DOM目的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">操作页面元素，例如：创建元素，移动图片等......</span><br><span class="line"></span><br><span class="line">常见的操作：获取元素，注册事件，操作元素</span><br><span class="line"></span><br><span class="line">因为页面中有茫茫多的元素，我们要操作哪个元素就得先获取那个元素</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、获取页面元素"><a href="#3、获取页面元素" class="headerlink" title="3、获取页面元素"></a>3、获取页面元素</h2><p>我们常常要操作页面元素，但是因为页面元素太多，所以我们要操作什么元素获取什么元素</p>
+<h4 id="获取body元素"><a href="#获取body元素" class="headerlink" title="获取body元素"></a>获取body元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">语法：document.body</span><br><span class="line"></span><br><span class="line">var body &#x3D; document.body;</span><br><span class="line">console.log(body);</span><br><span class="line"></span><br><span class="line">注意：body 是页面内主体标签，有特殊性，可快速获取，但是 div 这类标签就不行。</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据id获取元素"><a href="#根据id获取元素" class="headerlink" title="根据id获取元素"></a>根据id获取元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">语法：document.getElementById(&#39;id名&#39;)</span><br><span class="line"></span><br><span class="line">var box &#x3D; document.getElementById(&#39;box&#39;)</span><br><span class="line">console.log(box);</span><br></pre></td></tr></table></figure>
+
+<h5 id="练习："><a href="#练习：" class="headerlink" title="练习："></a>练习：</h5><p>​    能够根据id获取元素</p>
+<p>​    能够根据标签名回去元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var box &#x3D; document.getElementById(&#39;box&#39;);</span><br><span class="line">		var ps &#x3D; box.getElementsByTagName(&#39;p&#39;);</span><br><span class="line">		console.log(ps);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="根据标签名获取元素"><a href="#根据标签名获取元素" class="headerlink" title="根据标签名获取元素"></a>根据标签名获取元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">语法：document.getElementsByTagName(&#39;标签名&#39;)</span><br><span class="line"></span><br><span class="line">var inputs &#x3D; document.getElementsByTagName(&#39;input&#39;);</span><br><span class="line">console.log(inputs);</span><br><span class="line"></span><br><span class="line">注意：通过标签名获取到的数据是伪数组，不管标签是一个还是多个，返回的都是伪数组。</span><br><span class="line"></span><br><span class="line"> 数组和伪数组的区别？</span><br><span class="line"> &#x2F;&#x2F; 相同：都有索引和长度（length）</span><br><span class="line"> &#x2F;&#x2F; 不同点：伪数组不能够调用真正数组中内置的方法（push、pop、sort...）</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据选择器获取元素"><a href="#根据选择器获取元素" class="headerlink" title="根据选择器获取元素"></a>根据选择器获取元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">根据选择器获取单个元素</span><br><span class="line">语法：&#x3D;&#x3D;document.querySelector(&#39;选择器&#39;);</span><br><span class="line"></span><br><span class="line">根据选择器获取一组元素</span><br><span class="line">document.querySelectorAll(&#39;选择器&#39;);</span><br><span class="line"></span><br><span class="line">document.getElementsByClassName(&#39;class名&#39;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h5><p>​    根据标签名获取一组li</p>
+<p>​    缩小获取元素的范围</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var lis &#x3D; document.querySelectorAll(&#39;#d1 li&#39;);</span><br><span class="line">console.log(lis);</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、事件"><a href="#4、事件" class="headerlink" title="4、事件"></a>4、事件</h2><p>我们通常要做某些操作之后，才会让元素发生变化，那么此时就需要事件驱动完成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件：用于和用户交互的动作，尤其是鼠标的点击，键盘的输入回车等；本质为浏览器里面一种  触发-响应  的一种机制</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h3><ul>
+<li>事件源:   被触发事件的元素，如 当按钮被操作</li>
+<li>事件类型:  事件的触发方式，如 鼠标点击 或 键盘输入【onclick，ondblclick】</li>
+<li>事件处理函数: 事件触发后要执行的代码，如 函数内让 body 变背景色</li>
+</ul>
+<h3 id="给元素注册事件"><a href="#给元素注册事件" class="headerlink" title="给元素注册事件"></a>给元素注册事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">语法：事件源.事件类型 &#x3D; 事件处理程序</span><br><span class="line"></span><br><span class="line">- 事件源→ 触发的那个元素</span><br><span class="line">- 事件类型→点击 onclick</span><br><span class="line">- 事件处理程序→ 函数</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F; 获取按钮元素</span><br><span class="line"> var btn &#x3D; document.getElementById(&#39;btn&#39;);</span><br><span class="line"> btn.onclick &#x3D; function()&#123;</span><br><span class="line">   &#x2F;&#x2F; 函数体中的代码，就是事件发生后要执行的程序</span><br><span class="line">   alert(&#39;哇哈哈&#39;);</span><br><span class="line"> &#125;;</span><br><span class="line"> &#x2F;&#x2F; 事件处理程序的本质是什么？</span><br><span class="line"> &#x2F;&#x2F; ① onclick本质上就是事件源这个对象中的某一个键值对而已。默认值是null，表示没有注册事件</span><br><span class="line"> &#x2F;&#x2F; ② 给事件源注册onclick事件，其实本质上就是给onclick赋值函数，所以onclick是事件源的一个方法而已</span><br><span class="line"> &#x2F;&#x2F; ③ 点击按钮时，浏览器自动调用了btn.onclick();</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件处理程序中的this"><a href="#事件处理程序中的this" class="headerlink" title="事件处理程序中的this"></a>事件处理程序中的this</h3><p>事件处理程序中的this指向事件源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取按钮元素</span><br><span class="line">var btn1 &#x3D; document.getElementById(&#39;btn&#39;);</span><br><span class="line"></span><br><span class="line">btn1.onclick &#x3D; function()&#123;</span><br><span class="line">  &#x2F;&#x2F; 函数体中的代码，就是事件发生后要执行的程序</span><br><span class="line">  &#x2F;&#x2F; 关键字：this，代表事件源</span><br><span class="line">  console.log(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h4><p>​    点击li弹出你好</p>
+<p>​    点击一组li，点击哪个li都可以弹出你好</p>
+<p>​    给一组li添加点击事件，点击哪个li打印哪个li的索引值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 获取元素</span><br><span class="line">var lis &#x3D; document.querySelectorAll(&#39;li&#39;);&#x2F;&#x2F; lis &#x3D; [li,li,li......]</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 添加事件：给每一个li添加事件，一个一个找到并且添加</span><br><span class="line">&#x2F;&#x2F; lis[0].onclick &#x3D; function () &#123;</span><br><span class="line">&#x2F;&#x2F; 	alert(&#39;哇哈哈&#39;);</span><br><span class="line">&#x2F;&#x2F; &#125;</span><br><span class="line">&#x2F;&#x2F; 遍历添加事件</span><br><span class="line">&#x2F;&#x2F; 打印索引值：</span><br><span class="line">for (var i &#x3D; 0; i &lt; lis.length; i++) &#123;</span><br><span class="line">	&#x2F;&#x2F; 一进入循环，立刻给这个li添加一个下标属性，用来记录下标</span><br><span class="line">	lis[i].index &#x3D; i;</span><br><span class="line">	&#x2F;&#x2F; 找规律</span><br><span class="line">	&#x2F;&#x2F; lis[0].index &#x3D; 0;</span><br><span class="line">	&#x2F;&#x2F; lis[1].index &#x3D; 1;</span><br><span class="line">	&#x2F;&#x2F; lis[2].index &#x3D; 2;</span><br><span class="line">	&#x2F;&#x2F; ......</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; console.log( lis[i] );</span><br><span class="line">	lis[i].onclick &#x3D; function () &#123;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; alert(&#39;哇哈哈&#39;);</span><br><span class="line">		&#x2F;&#x2F; console.log(i);</span><br><span class="line">		console.log(this.index);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、元素属性操作"><a href="#5、元素属性操作" class="headerlink" title="5、元素属性操作"></a>5、元素属性操作</h2><p>操作元素实质就是改变属性，元素的属性发生变化，元素也会变化</p>
+<h3 id="操作有两种语法："><a href="#操作有两种语法：" class="headerlink" title="操作有两种语法："></a>操作有两种语法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">获取属性：语法：元素.属性名；</span><br><span class="line"></span><br><span class="line">设置属性：语法：元素.属性名 &#x3D; 值；</span><br><span class="line"></span><br><span class="line">元素的属性既可以获取，也可以设置</span><br></pre></td></tr></table></figure>
+
+<h3 id="常见的属性"><a href="#常见的属性" class="headerlink" title="常见的属性"></a>常见的属性</h3><p><strong>href、title、id、src、className、innerText 、innerHTML</strong></p>
+<blockquote>
+<p>特别注意，类名属性的获取和修改需要写成  className。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var link &#x3D; document.getElementById(&#39;link&#39;);</span><br><span class="line">console.log(link.href);</span><br><span class="line">console.log(link.title);</span><br><span class="line">var pic &#x3D; document.getElementById(&#39;pic&#39;);</span><br><span class="line">console.log(pic.src);</span><br><span class="line">console.log(pic.className);</span><br></pre></td></tr></table></figure>
+
+<h4 id="innerText和innerHTML的区别："><a href="#innerText和innerHTML的区别：" class="headerlink" title="innerText和innerHTML的区别："></a>innerText和innerHTML的区别：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;box&quot;&gt;&lt;h2&gt;我是div中的标题&lt;&#x2F;h2&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"> &#x2F;&#x2F; 1. 获取div元素</span><br><span class="line"> var div &#x3D; document.getElementById(&#39;box&#39;);</span><br><span class="line"> console.dir(div);</span><br><span class="line"> &#x2F;&#x2F; 【获取】</span><br><span class="line"> &#x2F;&#x2F; ① 通过innerText获取,仅仅包含文本</span><br><span class="line"> console.log(div.innerText);</span><br><span class="line"> &#x2F;&#x2F; ② 通过innerHTML获取，若有子标签时，会包含文本和子标签</span><br><span class="line"> console.log(div.innerHTML);</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F; 【设置】</span><br><span class="line"> &#x2F;&#x2F; ① 通过innerText设置,若设置中包含了子标签，该标签不会被渲染而是当做普通文本显示</span><br><span class="line"> &#x2F;&#x2F; div.innerText &#x3D; &#39;&lt;a href&#x3D;&quot;#&quot;&gt;我是div中的超链接&lt;&#x2F;a&gt;&#39;;</span><br><span class="line"> &#x2F;&#x2F; ② 通过innerHTML设置,若设置中包含了子标签，该标签会被渲染显示</span><br><span class="line"> div.innerHTML&#x3D; &#39;&lt;a href&#x3D;&quot;#&quot;&gt;我是div中的超链接&lt;&#x2F;a&gt;&#39;;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>课程回顾：</p>
+<p>​    1、获取元素：</p>
+<p>​        document.body</p>
+<p>​        document.getElementById(‘id名’);document.getElementsByTagName(‘标签名’);</p>
+<p>​        document.querySelector(‘选择器’);documet.querySelectorAll(‘选择器’); </p>
+<p>​    2、事件：</p>
+<p>​        事件三要素：事件源，事件类型，事件处理程序【this：当前事件源】</p>
+<p>​        事件源.事件类型 = function () {代码}</p>
+<p>​    3、操作元素属性</p>
+<p>​        获取：元素.属性;</p>
+<p>​        设置：元素.属性 = 值;</p>
+<p>​        class==&gt;className;</p>
+<p>​        innerText，innerHTML    </p>
+<h4 id="练习：-1"><a href="#练习：-1" class="headerlink" title="练习："></a>练习：</h4><p>​    点击按钮修改div的内容</p>
+<p>​    点击切换图片</p>
+<p>​    美女相册 </p>
+<h3 id="表单属性操作"><a href="#表单属性操作" class="headerlink" title="表单属性操作"></a>表单属性操作</h3><p>获取和设置表单元素的属性，表单常见属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">表单常见属性：</span><br><span class="line">value 用于大部分表单元素的内容获取</span><br><span class="line">type 可以获取input标签的类型</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">表单常见属性：</span><br><span class="line">- disabled 禁用属性</span><br><span class="line">- checked 复选框选中属性</span><br><span class="line">- selected 下拉菜单选中属性</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/04/06/webapi2/" data-toggle="tooltip" data-placement="top"
+                           title="webapi2">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#day1"><span class="toc-text">day1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#今日核心知识"><span class="toc-text">今日核心知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1、回顾JS组成"><span class="toc-text">1、回顾JS组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript组成：ECMA，DOM，BOM"><span class="toc-text">JavaScript组成：ECMA，DOM，BOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API和weiAPIs"><span class="toc-text">API和weiAPIs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、DOM介绍"><span class="toc-text">2、DOM介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM的概念"><span class="toc-text">DOM的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-树"><span class="toc-text">DOM 树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习DOM目的"><span class="toc-text">学习DOM目的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、获取页面元素"><span class="toc-text">3、获取页面元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取body元素"><span class="toc-text">获取body元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根据id获取元素"><span class="toc-text">根据id获取元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#练习："><span class="toc-text">练习：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根据标签名获取元素"><span class="toc-text">根据标签名获取元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根据选择器获取元素"><span class="toc-text">根据选择器获取元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#练习"><span class="toc-text">练习</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、事件"><span class="toc-text">4、事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件三要素"><span class="toc-text">事件三要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#给元素注册事件"><span class="toc-text">给元素注册事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件处理程序中的this"><span class="toc-text">事件处理程序中的this</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#练习-1"><span class="toc-text">练习</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、元素属性操作"><span class="toc-text">5、元素属性操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作有两种语法："><span class="toc-text">操作有两种语法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的属性"><span class="toc-text">常见的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#innerText和innerHTML的区别："><span class="toc-text">innerText和innerHTML的区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习：-1"><span class="toc-text">练习：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单属性操作"><span class="toc-text">表单属性操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text"></span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 测试顺带笔记 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>

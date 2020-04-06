@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姑姑">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="测试顺带笔记" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        webapi6｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2020/04/06/webapi6/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    测试顺带笔记
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>webapi6</h1>
+                    
+                    <span class="meta">
+                         作者 摸鱼侠
+                        <span>
+                          日期 2020-04-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            webapi6
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="核心知识点"><a href="#核心知识点" class="headerlink" title="核心知识点"></a>核心知识点</h2><ul>
+<li>touch事件（touchstart、touchmove、touchend）</li>
+<li>touchEvent 事件对象</li>
+<li>transitionend事件</li>
+</ul>
+<h2 id="1-touch事件类型"><a href="#1-touch事件类型" class="headerlink" title="1. touch事件类型"></a>1. touch事件类型</h2><blockquote>
+<p>​    移动设备上无法使用鼠标，当手指触碰屏幕时会触发 click、mousedown、mouseup 事件。</p>
+<p>但是，touch事件要比鼠标事件执行效率高，用户体验好。</p>
+<p><strong>注意：以下事件必须通过事件监听注册</strong> </p>
+<p>事件添加：</p>
+<p>​    元素.onclick = function () {}</p>
+<p>​    元素.addEventlistener(‘click’,function (){});</p>
+</blockquote>
+<ul>
+<li>touchstart，手指按下事件</li>
+<li>touchmove，手指移动事件</li>
+<li>touchend，手指松开事件</li>
+</ul>
+<h2 id="2-touch事件对象"><a href="#2-touch事件对象" class="headerlink" title="2. touch事件对象"></a>2. touch事件对象</h2><ul>
+<li><p>常见的属性</p>
+<blockquote>
+<ol>
+<li>事件对象.touches ：位于屏幕上的所有手指的列表；</li>
+<li>事件对象.targetTouches ：位于该元素上的所有手指的列表；</li>
+<li>事件对象.changedTouches：被改变的手指列表。  touchstart时包含刚与触摸屏接触的触点，touchend时包含离开触摸屏的触点</li>
+</ol>
+<p>touches和targetTouches必须是在屏幕上，而changedTouches可以获取离开屏幕的手指的</p>
+</blockquote>
+</li>
+<li><p>手指的位置</p>
+<blockquote>
+<ol>
+<li>手指对象.clientX/Y 手指相对于可视区域</li>
+<li>手指对象.pageX/Y 手指相对于文档</li>
+</ol>
+<p><strong>注意：手指对象.clientX/Y 使用较多</strong>  </p>
+</blockquote>
+</li>
+</ul>
+<p>***打印出手指按下的位置</p>
+<h2 id="3-常见的手势"><a href="#3-常见的手势" class="headerlink" title="3.常见的手势"></a>3.常见的手势</h2><blockquote>
+<p>​    注意：以下手势的实现是在touch事件基础上。我们不需要自己实现以下所有手势，有专门的第三方可以直接拿来使用。</p>
+<p>​    以下手势仅仅是了解。</p>
+</blockquote>
+<p><img src="media/01.png" alt=""></p>
+<h3 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h3><ol>
+<li>模拟tap手势（点击）</li>
+<li>模拟flick手势（轻滑）</li>
+<li>移动端京东轮播图</li>
+</ol>
+<h2 id="4-transitionend事件"><a href="#4-transitionend事件" class="headerlink" title="4. transitionend事件"></a>4. transitionend事件</h2><p>谁有过渡效果，这个事件添加给谁【事件监听】</p>
+<blockquote>
+<p>css中过渡结束后检测的行为</p>
+<p>谁有过渡属性，把这个事件加给谁</p>
+</blockquote>
+<h1 id="Zepto"><a href="#Zepto" class="headerlink" title="Zepto"></a>Zepto</h1><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><strong>Zepto</strong>是一个轻量级的 <strong>针对现代手机端浏览器的 JavaScript 库</strong>。【JS文件】</p>
+<p>因为 Zepto 封装了移动端的手势模块，直接把很多手机端手势直接封装成了事件，我们可以直接使用。</p>
+<p>Zepto 中文官网地址：<a href="https://www.html.cn/doc/zeptojs_api/" target="_blank" rel="noopener">https://www.html.cn/doc/zeptojs_api/</a></p>
+<p>注意：手机端支持良好，PC端最好不要使用.</p>
+<h3 id="javaScript-库介绍"><a href="#javaScript-库介绍" class="headerlink" title="javaScript 库介绍"></a>javaScript 库介绍</h3><p>由其他的团队把我们常用的功能，直接封装好了，按照提供的手册学习使用即可。</p>
+<p>所有 JavaScript 库，本质就是 JavaScript 编写的代码，所有底层的 API 都是一样通过 JS 提供的API进行封装。</p>
+<p>但是在调用 JS 库的属性和方法的时候，因为会在原来的基础是包装过，所以要按照手册来使用。</p>
+<h2 id="zepto使用模块"><a href="#zepto使用模块" class="headerlink" title="zepto使用模块"></a>zepto使用模块</h2><img src="media/zepto.png">
+
+<h3 id="使用-zepto-步骤"><a href="#使用-zepto-步骤" class="headerlink" title="使用 zepto 步骤"></a>使用 zepto 步骤</h3><ol>
+<li>引入 <code>zepto.js</code> 核心库。</li>
+<li>引入 <code>zepto.touch.js</code> 移动端手势模块。</li>
+<li>新建 <code>&lt;script&gt;</code> 标签写业务代码。</li>
+</ol>
+<h1 id="Swiper-轮播图插件"><a href="#Swiper-轮播图插件" class="headerlink" title="Swiper 轮播图插件"></a>Swiper 轮播图插件</h1><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>使用 swiper 快速实现轮播图效果</p>
+<h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>Web 插件：就是别人封装好的一个 js 代码 或 css代码，可以直接拿来用。</p>
+<p>Swiper 就是一个轮播图的插件，由其他团队写好的，开源免费，全世界开发者都可以使用。</p>
+<p>Swiper插件官网： <a href="https://www.swiper.com.cn/" target="_blank" rel="noopener">https://www.swiper.com.cn/</a> </p>
+<p><strong>百度按照步骤执行既可</strong></p>
+<p>1、下载并且引入CSS文件和JS文件</p>
+<p>2、复制内容</p>
+<p>3、设置大小（可以不设置）</p>
+<p>4、复制功能代码</p>
+<h1 id="本地存储技术"><a href="#本地存储技术" class="headerlink" title="本地存储技术"></a>本地存储技术</h1><p>​    localSortage对象：把数据以字符串的方式保存本地</p>
+<p>​    获取： localStorage.getItem()<br>​    设置： localStorage.setItem()</p>
+<h1 id="JSON-方法补充"><a href="#JSON-方法补充" class="headerlink" title="JSON 方法补充"></a>JSON 方法补充</h1><p>​    作用：把字符串数组转成数组，或者把数组转成字符串数组</p>
+<p>例如：var str = ‘[“a”,”b”,”c”]’;</p>
+<p>​    JSON 解析：JSON.parse()：返回转换后的数组</p>
+<p>​    JSON 转字符串：JSON.stringify()</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/04/06/面试题/" data-toggle="tooltip" data-placement="top"
+                           title="面试题">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/06/webapi5/" data-toggle="tooltip" data-placement="top"
+                           title="webapi5">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#核心知识点"><span class="toc-text">核心知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-touch事件类型"><span class="toc-text">1. touch事件类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-touch事件对象"><span class="toc-text">2. touch事件对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-常见的手势"><span class="toc-text">3.常见的手势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#案例："><span class="toc-text">案例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-transitionend事件"><span class="toc-text">4. transitionend事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Zepto"><span class="toc-text">Zepto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javaScript-库介绍"><span class="toc-text">javaScript 库介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zepto使用模块"><span class="toc-text">zepto使用模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-zepto-步骤"><span class="toc-text">使用 zepto 步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Swiper-轮播图插件"><span class="toc-text">Swiper 轮播图插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#概念-1"><span class="toc-text">概念</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#本地存储技术"><span class="toc-text">本地存储技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSON-方法补充"><span class="toc-text">JSON 方法补充</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 测试顺带笔记 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>

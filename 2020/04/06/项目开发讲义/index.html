@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姑姑">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="测试顺带笔记" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        项目开发讲义｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2020/04/06/项目开发讲义/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    测试顺带笔记
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>项目开发讲义</h1>
+                    
+                    <span class="meta">
+                         作者 摸鱼侠
+                        <span>
+                          日期 2020-04-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            项目开发讲义
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h1><p>今日的课程主题是 <strong>项目</strong>，会讲到公司项目研发的流程。</p>
+<p>因为项目一般<strong>不是</strong>面试时候的核心考察点，所以今天还会讲到一些项目中<strong>经典问题及解法</strong>。</p>
+<p>因为<strong>时间有限</strong>, 老师这里准备的都是面试中<strong>最常见的问题</strong>,  </p>
+<p>以<strong>讲义</strong>内容为主,  如果讲解完毕后仍有时间, 我们再继续扩展其他</p>
+<h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><ul>
+<li><input checked="" disabled="" type="checkbox"> 理解 promise 主要解决的问题及常规用法</li>
+<li><input checked="" disabled="" type="checkbox"> 能够写出一个可以被链式调用的函数</li>
+<li><input checked="" disabled="" type="checkbox"> 能粗略的实现 promise的基本结构</li>
+<li><input checked="" disabled="" type="checkbox"> 可以自己封装一般的 api 请求模块</li>
+<li><input checked="" disabled="" type="checkbox"> 了解公司一般的角色（岗位）及职责</li>
+<li><input checked="" disabled="" type="checkbox"> 知道一个公司常规项目的流程</li>
+<li><input checked="" disabled="" type="checkbox"> 知道公司常规的缺陷管理的流程</li>
+<li><input checked="" disabled="" type="checkbox"> 知道常规的代码管理方式</li>
+<li><input checked="" disabled="" type="checkbox"> 知道常规系统的登录部分是如何设计的（简单登录/单点登录）</li>
+<li><input checked="" disabled="" type="checkbox"> 知道系统的权限部分如何设计的</li>
+<li><input checked="" disabled="" type="checkbox"> 可以将数组结构的数据转成树结构的数据</li>
+<li><input checked="" disabled="" type="checkbox"> 可以将树结构的数据转成数组的结构</li>
+<li><input checked="" disabled="" type="checkbox"> 知道如何限制接口的访问频率，</li>
+<li><input checked="" disabled="" type="checkbox"> 可以实现简单的 debounce </li>
+</ul>
+<h1 id="问题列表"><a href="#问题列表" class="headerlink" title="问题列表"></a>问题列表</h1><table>
+<thead>
+<tr>
+<th>知识点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>promise的源码和实际项目使用</td>
+</tr>
+<tr>
+<td>前端后端具体的合作的流程</td>
+</tr>
+<tr>
+<td>从研发到上线的具体详解</td>
+</tr>
+<tr>
+<td>项目开发中遇到的问题</td>
+</tr>
+<tr>
+<td>对axios再次封装（网络请求模块封装）</td>
+</tr>
+<tr>
+<td>混合APP原生APP打包上线</td>
+</tr>
+<tr>
+<td>限制接口调用频率</td>
+</tr>
+<tr>
+<td>权限管理结合项目前端实现</td>
+</tr>
+<tr>
+<td>打包到项目部署</td>
+</tr>
+<tr>
+<td>实现登录</td>
+</tr>
+<tr>
+<td>管理项目</td>
+</tr>
+<tr>
+<td>处理树形结构</td>
+</tr>
+</tbody></table>
+<h1 id="面试题详解"><a href="#面试题详解" class="headerlink" title="面试题详解"></a>面试题详解</h1><h2 id="理解promise"><a href="#理解promise" class="headerlink" title="理解promise"></a>理解promise</h2><p><strong>【问题分析】</strong></p>
+<p>怎么理解 promise ？ 写出指定代码的输出内容？</p>
+<p><strong>【答题思路】</strong></p>
+<p>关于 promise 通常会有三种题型。第一种就是问概念；第二种就是 给一段代码让说出他的输出；第三种 就是让你自己实现一个 promise ，来考察你对 promise 的理解和编程能力。（第三种一般是针对中高级的程序员）</p>
+<p>本节我们先回顾一下 promise的概念，然后一起来做两个题。</p>
+<ol>
+<li>promise 概念</li>
+</ol>
+<p><strong>promise 定义</strong>A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred)</p>
+<p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261" target="_blank" rel="noopener">https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261</a></p>
+<p><a href="https://promisesaplus.com/implementations" target="_blank" rel="noopener">https://promisesaplus.com/implementations</a></p>
+<ol start="2">
+<li>promise 题目1</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">数字打印的顺序</span><br><span class="line"><span class="keyword">const</span> first = <span class="function"><span class="params">()</span> =&gt;</span> <span class="function">(<span class="params"><span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">7</span>);</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line">            resolve(<span class="number">6</span>);</span><br><span class="line">        &#125;, <span class="number">0</span>)</span><br><span class="line">        resolve(<span class="number">1</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    resolve(<span class="number">2</span>);</span><br><span class="line">    p.then(<span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(arg);</span><br><span class="line">    &#125;);</span><br><span class="line"> </span><br><span class="line">&#125;));</span><br><span class="line"> </span><br><span class="line">first().then(<span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arg);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//1.同步的代码（最高）</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"><span class="comment">//7</span></span><br><span class="line"><span class="comment">//4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 微任务的异步代码（次高，then）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 宏任务的异步代码（最低，setTimeout）</span></span><br><span class="line"><span class="comment">//5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//6 不执行</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li>promise 题目2（理解 then 的第二回调函数和 catch）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 画出以下异步函数执行的可能的路线。</span></span><br><span class="line"><span class="comment">// https://developers.google.com/web/fundamentals/primers/promises</span></span><br><span class="line"><span class="comment">// 蓝线表示执行的 promise 路径，红路表示拒绝的 promise 路径。</span></span><br><span class="line"><span class="comment">// https://developers.google.com/web/fundamentals/primers/imgs/promise-flow.svg</span></span><br><span class="line">asyncThing1()</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> asyncThing2();</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> asyncThing3();</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> asyncRecovery1();</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> asyncThing4();</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> asyncRecovery2();</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Don't worry about it"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"All done!"</span>);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="promise-实践"><a href="#promise-实践" class="headerlink" title="promise 实践"></a>promise 实践</h2><p><strong>【问题分析】</strong></p>
+<p>如何把大象🐘放到冰箱里？</p>
+<p><strong>【答题思路】</strong></p>
+<p>开门/装大象/关门 都是异步的操作。</p>
+<p>通过本题加强对 promise 的理解，理解 promise 解决的核心问题是什么。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/////////////////方法1  callback//////////////////</span></span><br><span class="line"><span class="comment">//1. 准备函数 openDoor putIn closeDoor done</span></span><br><span class="line"><span class="comment">//2. 执行函数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDoor=<span class="function">(<span class="params">cb</span>)=&gt;</span>&#123;</span><br><span class="line">  setTimeout(cb,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> putIn=<span class="function">(<span class="params">cb</span>)=&gt;</span>&#123;</span><br><span class="line">  setTimeout(cb,<span class="number">3</span>*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> closeDoor=<span class="function">(<span class="params">cb</span>)=&gt;</span>&#123;</span><br><span class="line">  setTimeout(cb,<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> done=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.timeEnd();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'done'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">openDoor(<span class="function"><span class="params">()</span>=&gt;</span> putIn(<span class="function"><span class="params">()</span>=&gt;</span> closeDoor(done)  ));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//////</span></span><br><span class="line"><span class="comment">//const openDoor = cb =&gt; &#123;</span></span><br><span class="line"><span class="comment">//   setTimeout(cb, 1000);</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// const promise = () =&gt; &#123;</span></span><br><span class="line"><span class="comment">//   return new Promise((res, rej) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="comment">//       res();</span></span><br><span class="line"><span class="comment">//     &#125;, 1000);</span></span><br><span class="line"><span class="comment">//   &#125;);</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////vs/////////////////////</span></span><br><span class="line"><span class="comment">/////////////////方法1  promise//////////////////</span></span><br><span class="line"><span class="comment">//1. 准备promise函数 openDoor putIn closeDoor done</span></span><br><span class="line"><span class="comment">//2. 执行函数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDoor=<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">  setTimeout(res,<span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> putIn=<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">  setTimeout(res,<span class="number">1000</span>*<span class="number">3</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> closeDoor=<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">  setTimeout(res,<span class="number">1000</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> done=<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.timeEnd();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'done2'</span>);</span><br><span class="line">  res();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">openDoor()</span><br><span class="line">  .then(putIn)</span><br><span class="line">  .then(closeDoor)</span><br><span class="line">  .then(done)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="如何实现链式调用"><a href="#如何实现链式调用" class="headerlink" title="如何实现链式调用"></a>如何实现链式调用</h2><p><strong>【问题分析】</strong></p>
+<p>类似 <code>b.then().then().then()</code> 的链式调用是如何实现的？</p>
+<p><strong>【答题思路】</strong></p>
+<p>因为要不断的调用，所以一定是返回自己，或者返回一个 和自己类似的结构。</p>
+<p>后续实现 Promise 的时候，会用得上！</p>
+<p>面试就心里强大一点就行；出给我的题 面试官如果不知提前知道答案也  可能答不出来</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test1</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  then()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">6666</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a= <span class="keyword">new</span> Test1();</span><br><span class="line">a.then().then().then()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test2</span></span>&#123;</span><br><span class="line">  then()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">77777</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Test2();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b= <span class="keyword">new</span> Test2();</span><br><span class="line">b.then().then().then()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="promise-单元测试"><a href="#promise-单元测试" class="headerlink" title="promise 单元测试"></a>promise 单元测试</h2><p>1.准备测试框架</p>
+<p> 参考<a href="https://jestjs.io/docs/en/getting-started" target="_blank" rel="noopener">jest</a> 官网</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.初始化项目</span></span><br><span class="line">npm init</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.安装 jest</span></span><br><span class="line">yarn add --dev jest</span><br><span class="line"><span class="meta">#</span><span class="bash">npm install --save-dev jest</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. 支持 es2015+ 和 ts</span></span><br><span class="line">yarn add --dev babel-jest @babel/core @babel/preset-env @babel/preset-typescript @types/jest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4. 添加 文件 babel.config.js</span></span><br><span class="line">// babel.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  presets: [</span><br><span class="line">    ['@babel/preset-env', &#123;targets: &#123;node: 'current'&#125;&#125;],</span><br><span class="line">     '@babel/preset-typescript',</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5.配置命令</span></span><br><span class="line">    "test": "jest",</span><br><span class="line">    "test:watch": "jest --watchAll"</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.为了检查 Promise 实现的正确性，我们提前准备好单元测试</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="keyword">import</span> MyPromise <span class="keyword">from</span> <span class="string">"./index"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line">test(<span class="string">"1.promise 参数函数会立即执行"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> string;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    string = <span class="string">"foo"</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  expect(string).toBe(<span class="string">"foo"</span>);</span><br><span class="line"></span><br><span class="line">&#125;,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">it(<span class="string">"2. promise 在 then 的回调函数中可以拿到 resolve 的数据。"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> testString = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(testString);</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    expect(string).toBe(testString);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line">it(<span class="string">"promise 可以有多个 then，并且会依次执行"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> testString = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(testString);</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    expect(string).toBe(testString);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    expect(string).toBe(testString);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">it(<span class="string">"4.promise 可以嵌套多个 then，then的回调中可以返回 promise "</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> testString = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  promise</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          resolve(testString);</span><br><span class="line">        &#125;, <span class="number">20</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">      expect(string).toBe(testString);</span><br><span class="line">      done();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5</span></span><br><span class="line">it(<span class="string">"5.promise 可以嵌套多个 then，then的回调中可以返回 一个普通值"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> testString = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  promise</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> testString;</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">      expect(string).toBe(testString);</span><br><span class="line">      done();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6</span></span><br><span class="line">it(<span class="string">"6.resolved 状态的promise ，如果调用 then 方法会立即执行"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> testString = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(testString);</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">      expect(value).toBe(testString);</span><br><span class="line">      done();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">&#125;,<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">it(<span class="string">"7. 二次调用 resolve 不会产生影响。"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> testString = <span class="string">"foo"</span>;</span><br><span class="line">  <span class="keyword">var</span> testString2 = <span class="string">"bar"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> promise = <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      resolve(testString);</span><br><span class="line">      resolve(testString2);</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    expect(value).toBe(testString);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">      expect(value).toBe(testString);</span><br><span class="line">      done();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, <span class="number">50</span>);</span><br><span class="line"></span><br><span class="line">&#125;,<span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="promise-源码"><a href="#promise-源码" class="headerlink" title="promise 源码"></a>promise 源码</h2><p><strong>【问题分析】</strong></p>
+<p>如何实现一个 Promise ？</p>
+<p><strong>【答题思路】</strong></p>
+<p>promise 是一个对象，一般是通过 new Promise （）来实例化的；所以这里我要实现 Promise 类！</p>
+<p>promise 的 then 是可以链式调用的，所以可能会用到上面提到的，链式调用的实现。</p>
+<p>根据逐个单元测试的要求来实现 Promise</p>
+<p>主要实现 Promise 的构造方法和 then 方法； 后面会以链接的方式给出完整的实现。</p>
+<p><strong>【解题代码】</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> State = &#123;</span><br><span class="line">  pending: <span class="string">"pending"</span>,</span><br><span class="line">  resolved: <span class="string">"rejected"</span>,</span><br><span class="line">  rejected: <span class="string">"rejected"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> noop = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> MyPromise &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">exclutor</span>) &#123;</span><br><span class="line">    exclutor(<span class="keyword">this</span>._resolve.bind(<span class="keyword">this</span>), <span class="keyword">this</span>._reject);</span><br><span class="line">  &#125;</span><br><span class="line">  _state = State.pending;</span><br><span class="line">  _value;</span><br><span class="line">  _resolve(val) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>._state === State.pending) &#123;</span><br><span class="line">      <span class="keyword">this</span>._value = val;</span><br><span class="line">      <span class="keyword">this</span>._state = State.resolved;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">this</span>._runResolveArray();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  _reject() &#123;&#125;</span><br><span class="line">  _runResolveArray() &#123;</span><br><span class="line">    <span class="comment">//执行 then 传入进来的 onRes</span></span><br><span class="line">    <span class="keyword">this</span>._resArray.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// const item</span></span><br><span class="line">      <span class="keyword">const</span> result = item.handle(<span class="keyword">this</span>._value);</span><br><span class="line">      <span class="keyword">const</span> nextPromise = item.promise;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (result <span class="keyword">instanceof</span> MyPromise) &#123;</span><br><span class="line">        result.then(<span class="function"><span class="params">val</span> =&gt;</span> item.promise._resolve(val));</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        item.promise._resolve(result);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _resArray = [];</span><br><span class="line"></span><br><span class="line">  then(onRes, onRej = noop) &#123;</span><br><span class="line">    <span class="comment">// if (this._state === State.pending) &#123;</span></span><br><span class="line">    <span class="keyword">const</span> newPromise = <span class="keyword">new</span> MyPromise(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;);</span><br><span class="line">    <span class="keyword">const</span> item = &#123; promise: newPromise, handle: onRes &#125;;</span><br><span class="line">    <span class="keyword">this</span>._resArray.push(item);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>._state === State.resolved) &#123;</span><br><span class="line">      <span class="keyword">this</span>._runResolveArray();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newPromise;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MyPromise;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>【问题延伸】</p>
+<p>几种Promise 的实现</p>
+<p><a href="https://github.com/ericyang89/my-promise" target="_blank" rel="noopener">https://github.com/ericyang89/my-promise</a></p>
+<p><a href="https://github.com/vividbytes/implementing-promises" target="_blank" rel="noopener">https://github.com/vividbytes/implementing-promises</a></p>
+<p><a href="https://github.com/iam91/zpromise/blob/master/src/zpromise.js" target="_blank" rel="noopener">https://github.com/iam91/zpromise/blob/master/src/zpromise.js</a></p>
+<h2 id="项目api-请求模块封装"><a href="#项目api-请求模块封装" class="headerlink" title="项目api 请求模块封装"></a>项目api 请求模块封装</h2><p><strong>【题目分析】</strong></p>
+<p>你项目中的网络/api 请求模块是如何封装的？</p>
+<p><strong>【答题思路】</strong></p>
+<ol>
+<li>接口请求一般是异步的，可以返回 promise 更加清晰。</li>
+<li>网络请求url 的公共部分可以单独配置到 网络请求内部。</li>
+<li>针对所有的接口可以进行统一的处理。这也是面向切面编程的一个实践。</li>
+<li>可以借助第三方库 axios 快速的封装 网络请求模块。</li>
+</ol>
+<p><strong>【解题步骤｜代码】</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">"axios"</span>;</span><br><span class="line"><span class="keyword">import</span> constant <span class="keyword">from</span> <span class="string">"../constant"</span>;</span><br><span class="line"><span class="keyword">import</span> reactNavigationHelper <span class="keyword">from</span> <span class="string">"./reactNavigationHelper"</span>;</span><br><span class="line"><span class="keyword">import</span> commonToast <span class="keyword">from</span> <span class="string">"./commonToast"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置请求url 的公共部分及超时时间</span></span><br><span class="line"><span class="keyword">const</span> commonHttp = axios.create(&#123;</span><br><span class="line">  baseURL: constant.baseUri,</span><br><span class="line">  timeout: <span class="number">10</span> * <span class="number">1000</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">commonHttp.interceptors.response.use(</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//针对所有接口统一处理登录过期的问题</span></span><br><span class="line">    <span class="keyword">if</span> (error.response.status === <span class="number">401</span>) &#123;</span><br><span class="line">      commonToast.show(<span class="string">"登录过期"</span>);</span><br><span class="line">      reactNavigationHelper.navigate(<span class="string">"Login"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> commonHttp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="公司角色及职责"><a href="#公司角色及职责" class="headerlink" title="公司角色及职责"></a>公司角色及职责</h2><p>一般公司与项目流程有关的角色</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1ow4ov3nj30jy0hhn0u.jpg" alt="image-20200219142325265"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1owg6le3j30jo0heq6o.jpg" alt="image-20200219142343405"></p>
+<p>##项目流程</p>
+<p><strong>【题目分析】</strong></p>
+<p>你们的开发流程/项目流程大概是什么样的？</p>
+<p><strong>【答题思路】</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1oybv0y5j30u00wbn9k.jpg" alt="image-20200219142531400"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1p19c4iej30vc0rugvg.jpg?1" alt="image-20200219142820684"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1p1mqu2dj30vd0b3juh.jpg" alt="image-20200219142841929"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1pz3xe5hj30pm0tuq7t.jpg" alt="image-20200219150052792"></p>
+<p>简要说明项目流程：</p>
+<ol>
+<li>产品出需求文档；开需求会；</li>
+<li>估时，部分项目写技术方案；接口阅读</li>
+<li>开始开发；测试给冒烟测试/测试用例评审</li>
+<li>前后端联调</li>
+<li>冒烟测试</li>
+<li>提测</li>
+<li>跟测/上环境</li>
+<li>上线/线上跟踪/项目总结</li>
+</ol>
+<h2 id="项目缺陷管理"><a href="#项目缺陷管理" class="headerlink" title="项目缺陷管理"></a>项目缺陷管理</h2><p><strong>【题目分析】</strong></p>
+<p>如何做bug/缺陷管理？</p>
+<p><strong>【答题思路】</strong></p>
+<ol>
+<li><p>缺陷管理角色</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1pngtxqej30to0neadm.jpg" alt="image-20200219144941335"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1pnsvg2ej30tl06dt9o.jpg" alt="image-20200219145001216"></p>
+</li>
+<li><p>bug 处理流程</p>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1pjnhgvgj31930u0qjw.jpg" alt="image-20200219144601063"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1pl3odp7j30y00s4wng.jpg" alt="image-20200219144725016"></p>
+<h2 id="代码管理"><a href="#代码管理" class="headerlink" title="代码管理"></a>代码管理</h2><p><strong>【题目分析】</strong></p>
+<p>你们的代码大概怎么管理的？</p>
+<p>怎么管理 git 分支的？</p>
+<p><strong>【答题思路】</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1q7u7w0sj317r0smh0y.jpg" alt="image-20200219150915511"></p>
+<h2 id="项目打包"><a href="#项目打包" class="headerlink" title="项目打包"></a>项目打包</h2><p><strong>【题目分析】</strong></p>
+<p>你们项目为什么需要打包/编译/构建？</p>
+<p><strong>【答题思路】</strong></p>
+<p>为什么要项目打包？</p>
+<ol>
+<li><p>es2015+ 转 es5</p>
+</li>
+<li><p>Js/css/图片 文件合并</p>
+</li>
+<li><p>ts 转 js</p>
+</li>
+<li><p>模板编译 jsx 转 js</p>
+</li>
+<li><p>less/sass 转 css</p>
+</li>
+<li><p>css </p>
+</li>
+<li><p>代码压缩</p>
+</li>
+<li><p>针对不同环境生成不同的代码</p>
+</li>
+</ol>
+<h2 id="常规登录流程"><a href="#常规登录流程" class="headerlink" title="常规登录流程"></a>常规登录流程</h2><p><strong>【题目分析】</strong></p>
+<p>你们项目中登录大概是怎么实现？</p>
+<p><strong>【答题思路】</strong></p>
+<ol>
+<li><p>最简单的登录流程</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc1zvzkgwxj30m50b676h.jpg" alt="image-20200219204350033"></p>
+</li>
+<li><p>端点登录-sso</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc20ibpe75j30kv0q3juv.jpg" alt="image-20200219210517079"></p>
+</li>
+<li><p>注意问题</p>
+<ol>
+<li>密码一般不用明文保存</li>
+<li>发送 用户名 密码 的网络请求一般不用 get</li>
+</ol>
+</li>
+</ol>
+<h2 id="项目中权限管理"><a href="#项目中权限管理" class="headerlink" title="项目中权限管理"></a>项目中权限管理</h2><p><strong>【题目分析】</strong></p>
+<p>你们项目中权限管理是怎么实现？</p>
+<p><strong>【答题思路】</strong></p>
+<ol>
+<li><p>常规权限模型</p>
+<p>RBAC基于角色的权限访问控制（Role-Based Access Control）</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc2pc8el7wj30jg0bhjv8.jpg" alt="image-20200220112421950"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc2pcqn4y5j30ji0algqp.jpg?" alt="image-20200220112449243"></p>
+</li>
+<li><p>常规管理系统中的权限</p>
+<ul>
+<li>根据登录用户返回菜单列表— — 可能是一颗树</li>
+<li>根据登录用户控制接口权限</li>
+</ul>
+</li>
+<li><p>前台系统中的权限管理</p>
+<ul>
+<li>更专注于入口的控制</li>
+<li>越权的提示也不可少</li>
+<li>多级权限可能会涉及到计算</li>
+</ul>
+</li>
+</ol>
+<p><strong>【问题延伸】</strong></p>
+<p>菜单列表通常是一个树的结构，后端一般喜欢给一个列表（数组），该如何去构建？！</p>
+<h2 id="根据数组构建树"><a href="#根据数组构建树" class="headerlink" title="根据数组构建树"></a>根据数组构建树</h2><p><strong>【题目分析】</strong></p>
+<p>根据数组构建树?</p>
+<p><strong>【答题思路】</strong></p>
+<ol>
+<li>给定原始数据（originData），期待生成一个树形结构的对象(treeData)。</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">export</span> <span class="keyword">type</span> Item = &#123;</span><br><span class="line">  id: <span class="built_in">number</span>;</span><br><span class="line">  parentId: <span class="built_in">number</span>;</span><br><span class="line">  name: <span class="built_in">String</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">type</span> Node = Item &amp; &#123; children: Node[] &#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> originData: Item[] = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">0</span>,</span><br><span class="line">    parentId: <span class="literal">null</span>,</span><br><span class="line">    name: <span class="string">"生物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    parentId: <span class="number">0</span>,</span><br><span class="line">    name: <span class="string">"动物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    parentId: <span class="number">0</span>,</span><br><span class="line">    name: <span class="string">"植物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">3</span>,</span><br><span class="line">    parentId: <span class="number">0</span>,</span><br><span class="line">    name: <span class="string">"微生物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">4</span>,</span><br><span class="line">    parentId: <span class="number">1</span>,</span><br><span class="line">    name: <span class="string">"哺乳动物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">5</span>,</span><br><span class="line">    parentId: <span class="number">1</span>,</span><br><span class="line">    name: <span class="string">"卵生动物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">6</span>,</span><br><span class="line">    parentId: <span class="number">2</span>,</span><br><span class="line">    name: <span class="string">"种子植物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">7</span>,</span><br><span class="line">    parentId: <span class="number">2</span>,</span><br><span class="line">    name: <span class="string">"蕨类植物"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">8</span>,</span><br><span class="line">    parentId: <span class="number">4</span>,</span><br><span class="line">    name: <span class="string">"大象"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">9</span>,</span><br><span class="line">    parentId: <span class="number">4</span>,</span><br><span class="line">    name: <span class="string">"海豚"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">10</span>,</span><br><span class="line">    parentId: <span class="number">4</span>,</span><br><span class="line">    name: <span class="string">"猩猩"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">11</span>,</span><br><span class="line">    parentId: <span class="number">5</span>,</span><br><span class="line">    name: <span class="string">"蟒蛇"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">12</span>,</span><br><span class="line">    parentId: <span class="number">5</span>,</span><br><span class="line">    name: <span class="string">"麻雀"</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> treeData: Node = &#123;</span><br><span class="line">  children: [</span><br><span class="line">    &#123;</span><br><span class="line">      children: [</span><br><span class="line">        &#123;</span><br><span class="line">          children: [</span><br><span class="line">            &#123; children: [], id: <span class="number">8</span>, name: <span class="string">"大象"</span>, parentId: <span class="number">4</span> &#125;,</span><br><span class="line">            &#123; children: [], id: <span class="number">9</span>, name: <span class="string">"海豚"</span>, parentId: <span class="number">4</span> &#125;,</span><br><span class="line">            &#123; children: [], id: <span class="number">10</span>, name: <span class="string">"猩猩"</span>, parentId: <span class="number">4</span> &#125;</span><br><span class="line">          ],</span><br><span class="line">          id: <span class="number">4</span>,</span><br><span class="line">          name: <span class="string">"哺乳动物"</span>,</span><br><span class="line">          parentId: <span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          children: [</span><br><span class="line">            &#123; children: [], id: <span class="number">11</span>, name: <span class="string">"蟒蛇"</span>, parentId: <span class="number">5</span> &#125;,</span><br><span class="line">            &#123; children: [], id: <span class="number">12</span>, name: <span class="string">"麻雀"</span>, parentId: <span class="number">5</span> &#125;</span><br><span class="line">          ],</span><br><span class="line">          id: <span class="number">5</span>,</span><br><span class="line">          name: <span class="string">"卵生动物"</span>,</span><br><span class="line">          parentId: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      id: <span class="number">1</span>,</span><br><span class="line">      name: <span class="string">"动物"</span>,</span><br><span class="line">      parentId: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      children: [</span><br><span class="line">        &#123; children: [], id: <span class="number">6</span>, name: <span class="string">"种子植物"</span>, parentId: <span class="number">2</span> &#125;,</span><br><span class="line">        &#123; children: [], id: <span class="number">7</span>, name: <span class="string">"蕨类植物"</span>, parentId: <span class="number">2</span> &#125;</span><br><span class="line">      ],</span><br><span class="line">      id: <span class="number">2</span>,</span><br><span class="line">      name: <span class="string">"植物"</span>,</span><br><span class="line">      parentId: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; children: [], id: <span class="number">3</span>, name: <span class="string">"微生物"</span>, parentId: <span class="number">0</span> &#125;</span><br><span class="line">  ],</span><br><span class="line">  id: <span class="number">0</span>,</span><br><span class="line">  name: <span class="string">"生物"</span>,</span><br><span class="line">  parentId: <span class="literal">null</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>单元测试</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arrayToTree <span class="keyword">from</span> <span class="string">"./arrayToTree"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; originData, treeData &#125; <span class="keyword">from</span> <span class="string">"./data"</span>;</span><br><span class="line"></span><br><span class="line">test(<span class="string">"arrayToTee"</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  expect(arrayToTree(originData)).toEqual(treeData);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li><p>实现步骤</p>
+<ul>
+<li><p>实现函数签名</p>
+</li>
+<li><p>实现函数体</p>
+<ul>
+<li><p>处理 root</p>
+</li>
+<li><p>实现 addChildren 方法</p>
+</li>
+<li><p>执行 addChildren</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>【解题步骤】</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Item, Node &#125; <span class="keyword">from</span> <span class="string">"./data"</span>;</span><br><span class="line"><span class="comment">// + 实现函数签名</span></span><br><span class="line"><span class="comment">// + 实现函数体</span></span><br><span class="line"><span class="comment">//   + 处理 root</span></span><br><span class="line"><span class="comment">//   + 实现 addChildren 方法</span></span><br><span class="line"><span class="comment">//   + 执行 addChildren</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arrayToTree = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(arr) || arr.length &lt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">const</span> [root] = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> item.parentId === <span class="literal">null</span>);</span><br><span class="line">  <span class="keyword">const</span> addChildren = <span class="function">(<span class="params">node, dataList</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> children = dataList</span><br><span class="line">      .filter(<span class="function"><span class="params">item</span> =&gt;</span> item.parentId === node.id)</span><br><span class="line">      .map(<span class="function"><span class="params">item</span> =&gt;</span> addChildren(item, dataList));</span><br><span class="line">    <span class="keyword">return</span> &#123; ...node, children &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> addChildren(root, arr);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> arrayToTree;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h2><p><strong>【题目分析】</strong></p>
+<p>把上一节树的数据转成数组？</p>
+<p><strong>【答题思路】</strong></p>
+<ol>
+<li>单元测试</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> treeToArray <span class="keyword">from</span> <span class="string">"./treeToArray"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; originData, treeData &#125; <span class="keyword">from</span> <span class="string">"./data"</span>;</span><br><span class="line"></span><br><span class="line">test(<span class="string">"arrayToTee"</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  expect(</span><br><span class="line">    treeToArray(treeData).sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> (a.name &gt; b.name ? <span class="number">1</span> : <span class="number">-1</span>))</span><br><span class="line">  ).toEqual(originData.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> (a.name &gt; b.name ? <span class="number">1</span> : <span class="number">-1</span>)));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>大概步骤</p>
+<ul>
+<li>编写函数框架</li>
+<li>实现  <code>const nodeToArray = (node: Node, result: Item[]) =&gt; {}</code></li>
+<li>调用 nodeToArray</li>
+</ul>
+</li>
+</ol>
+<p><strong>【解题步骤】</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Node, Item &#125; <span class="keyword">from</span> <span class="string">"./data"</span>;</span><br><span class="line"><span class="keyword">const</span> treeToArray = <span class="function">(<span class="params">node: Node</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> nodeToArray = <span class="function">(<span class="params">node: Node, arr: Item[]</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; children, ...item &#125; = node;</span><br><span class="line">    arr.push(item);</span><br><span class="line">    children.forEach(<span class="function"><span class="params">child</span> =&gt;</span> nodeToArray(child, arr));</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> nodeToArray(node, []);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> treeToArray;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>【问题延伸】</strong></p>
+<ul>
+<li><p>二叉树遍历 <a href="https://leetcode.com/problems/binary-tree-preorder-traversal/" target="_blank" rel="noopener">https://leetcode.com/problems/binary-tree-preorder-traversal/</a></p>
+</li>
+<li><p>二叉树层序遍历 <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-level-order-traversal/</a></p>
+</li>
+<li><p>bfs </p>
+</li>
+</ul>
+<h2 id="如何限制接口访问频次"><a href="#如何限制接口访问频次" class="headerlink" title="如何限制接口访问频次"></a>如何限制接口访问频次</h2><p><strong>【题目分析】</strong></p>
+<p>如何限制接口访问频次？</p>
+<p><strong>【答题思路】</strong></p>
+<p>接口请求部分的逻辑我们可以封装成一个函数 fun。假设存在一个处理函数的函数better，接受fun，返回一个 betterFun。当 betterFun 被多次调用，fun 只在不要的时候执行。</p>
+<p><code>const betterFun=better(fun);</code></p>
+<p>限制接口访问一般涉及到用户的输入。主要有两个经典场景：<code>debounce</code> 强制函数在某段时间内只执行一次，<code>throttle</code> 强制函数以固定的速率执行。 <a href="https://css-tricks.com/the-difference-between-throttling-and-debouncing/" target="_blank" rel="noopener">对比demo</a></p>
+<ol>
+<li>使用 debounce（防抖）  <a href="https://codepen.io/llh911001/pen/EVMLJw?editors=101" target="_blank" rel="noopener">https://codepen.io/llh911001/pen/EVMLJw?editors=101</a></li>
+<li>使用 throttle （截流） <a href="https://codepen.io/llh911001/pen/XmGYKV?editors=101" target="_blank" rel="noopener">https://codepen.io/llh911001/pen/XmGYKV?editors=101</a></li>
+</ol>
+<p>debounce 单元测试</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> debounce <span class="keyword">from</span> <span class="string">"./debounce"</span>;</span><br><span class="line">jest.useFakeTimers();</span><br><span class="line"></span><br><span class="line">test(<span class="string">"debounce"</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> func = jest.fn();</span><br><span class="line">  <span class="keyword">const</span> debounced = debounce(func, <span class="number">1000</span>);</span><br><span class="line">  debounced();</span><br><span class="line">  debounced();</span><br><span class="line"></span><br><span class="line">  jest.runAllTimers();</span><br><span class="line">  expect(func).toHaveBeenCalledTimes(<span class="number">1</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">test(<span class="string">"debounce twice"</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> func = jest.fn();</span><br><span class="line">  <span class="keyword">const</span> debounced = debounce(func, <span class="number">1000</span>);</span><br><span class="line">  debounced();</span><br><span class="line">  debounced();</span><br><span class="line">  setTimeout(debounced, <span class="number">20</span>);</span><br><span class="line">  setTimeout(debounced, <span class="number">2000</span>);</span><br><span class="line">  jest.runAllTimers();</span><br><span class="line">  expect(func).toHaveBeenCalledTimes(<span class="number">2</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>【解题步骤】</strong></p>
+<p>实现 debounce</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">fn, delay: <span class="built_in">number</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> inDebounce;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> context = <span class="keyword">this</span>;</span><br><span class="line">    clearTimeout(inDebounce);</span><br><span class="line">    inDebounce = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      fn.apply(context, args);</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> debounce;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>【问题延伸】</strong></p>
+<ol>
+<li>实现 throttle</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @param fn &#123;Function&#125;   实际要执行的函数</span></span><br><span class="line"><span class="comment">* @param delay &#123;Number&#125;  执行间隔，单位是毫秒（ms）</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @return &#123;Function&#125;     返回一个“节流”函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, threshold</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 记录上次执行的时间</span></span><br><span class="line">  <span class="keyword">var</span> last</span><br><span class="line">  <span class="comment">// 定时器</span></span><br><span class="line">  <span class="keyword">var</span> timer</span><br><span class="line">  <span class="comment">// 默认间隔为 250ms</span></span><br><span class="line">  threshold || (threshold = <span class="number">250</span>)</span><br><span class="line">  <span class="comment">// 返回的函数，每过 threshold 毫秒就执行一次 fn 函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 保存函数调用时的上下文和参数，传递给 fn</span></span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">arguments</span></span><br><span class="line">    <span class="keyword">var</span> now = +<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">    <span class="comment">// 如果距离上次执行 fn 函数的时间小于 threshold，那么就放弃</span></span><br><span class="line">    <span class="comment">// 执行 fn，并重新计时</span></span><br><span class="line">    <span class="keyword">if</span> (last &amp;&amp; now &lt; last + threshold) &#123;</span><br><span class="line">      clearTimeout(timer)</span><br><span class="line">      <span class="comment">// 保证在当前时间区间结束后，再执行一次 fn</span></span><br><span class="line">      timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        last = now</span><br><span class="line">        fn.apply(context, args)</span><br><span class="line">      &#125;, threshold)</span><br><span class="line">    <span class="comment">// 在时间区间的最开始和到达指定间隔的时候执行一次 fn</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      last = now</span><br><span class="line">      fn.apply(context, args)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li>debounce.leading vs debounce.trailing</li>
+</ol>
+<p>debounce.leading demo: <a href="https://codepen.io/dcorb/pen/GZWqNV" target="_blank" rel="noopener">https://codepen.io/dcorb/pen/GZWqNV</a></p>
+<p>debounce.trailing demo: <a href="https://codepen.io/dcorb/pen/KVxGqN" target="_blank" rel="noopener">https://codepen.io/dcorb/pen/KVxGqN</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait, immediate</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> timeout;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> context = <span class="keyword">this</span>, args = <span class="built_in">arguments</span>;</span><br><span class="line">		<span class="keyword">var</span> later = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			timeout = <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">if</span> (!immediate) func.apply(context, args);</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">var</span> callNow = immediate &amp;&amp; !timeout;</span><br><span class="line">		clearTimeout(timeout);</span><br><span class="line">		timeout = setTimeout(later, wait);</span><br><span class="line">		<span class="keyword">if</span> (callNow) func.apply(context, args);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考：</p>
+<p><a href="https://css-tricks.com/the-difference-between-throttling-and-debouncing/" target="_blank" rel="noopener">https://css-tricks.com/the-difference-between-throttling-and-debouncing/</a></p>
+<p><a href="http://hackll.com/2015/11/19/debounce-and-throttle/index.html" target="_blank" rel="noopener">http://hackll.com/2015/11/19/debounce-and-throttle/index.html</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/50367441" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/50367441</a></p>
+<p><a href="http://demo.nimius.net/debounce_throttle/" target="_blank" rel="noopener">http://demo.nimius.net/debounce_throttle/</a></p>
+<h2 id="前后端联调注意事项"><a href="#前后端联调注意事项" class="headerlink" title="前后端联调注意事项"></a>前后端联调注意事项</h2><p>【题目分析】</p>
+<p>你们公司（上一家公司），一般是怎么进行前后端联调的？</p>
+<p>【答题思路】</p>
+<ol>
+<li><p>项目是前后端分离的项目；后端负责提供数据接口，前端负责页面。</p>
+</li>
+<li><p>一般接口完成之后，后端会给一份接口文档，包含接口地址，请求类型，请求的参数，可能的数据返回。</p>
+</li>
+<li><p>部分后端同学可能不写文档，会进行口头沟通。口头沟通的时候需要记录必要的信息。</p>
+</li>
+<li><p>联调的时候最好是工作时间（免得晚上，别人下班了），因为可能涉及到沟通。</p>
+</li>
+<li><p>最好开发之前想好你需要哪些数据，然后和后端提前沟通一下。避免一下你需要的数据，后端没有开发，导致项目工期延误。</p>
+</li>
+</ol>
+<h2 id="复习js（可选）"><a href="#复习js（可选）" class="headerlink" title="复习js（可选）"></a>复习js（可选）</h2>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/06/移动项目/移动App开发介绍/" data-toggle="tooltip" data-placement="top"
+                           title="移动项目/移动App开发介绍">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#课程介绍"><span class="toc-text">课程介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学习目标"><span class="toc-text">学习目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题列表"><span class="toc-text">问题列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面试题详解"><span class="toc-text">面试题详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#理解promise"><span class="toc-text">理解promise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise-实践"><span class="toc-text">promise 实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何实现链式调用"><span class="toc-text">如何实现链式调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise-单元测试"><span class="toc-text">promise 单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise-源码"><span class="toc-text">promise 源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目api-请求模块封装"><span class="toc-text">项目api 请求模块封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公司角色及职责"><span class="toc-text">公司角色及职责</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目缺陷管理"><span class="toc-text">项目缺陷管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码管理"><span class="toc-text">代码管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目打包"><span class="toc-text">项目打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常规登录流程"><span class="toc-text">常规登录流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中权限管理"><span class="toc-text">项目中权限管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#根据数组构建树"><span class="toc-text">根据数组构建树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#树的遍历"><span class="toc-text">树的遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何限制接口访问频次"><span class="toc-text">如何限制接口访问频次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前后端联调注意事项"><span class="toc-text">前后端联调注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复习js（可选）"><span class="toc-text">复习js（可选）</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 测试顺带笔记 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>

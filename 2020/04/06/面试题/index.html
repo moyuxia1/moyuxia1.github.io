@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姑姑">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="测试顺带笔记" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        面试题｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2020/04/06/面试题/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    测试顺带笔记
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>面试题</h1>
+                    
+                    <span class="meta">
+                         作者 摸鱼侠
+                        <span>
+                          日期 2020-04-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            面试题
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><h3 id="1、解释一下什么是回调函数"><a href="#1、解释一下什么是回调函数" class="headerlink" title="1、解释一下什么是回调函数"></a>1、解释一下什么是回调函数</h3><ul>
+<li><strong>回调函数是指 使用者自己定义一个函数，实现这个函数的程序内容，然后把这个函数（入口地址）作为参数传入别人（或系统）的函数中，由别人（或系统）的函数在运行时来调用的函数。函数是你实现的，但由别人（或系统）的函数在运行时通过参数传递的方式调用，这就是所谓的回调函数。简单来说，就是由别人的函数运行期间来回调你实现的函数。</strong></li>
+</ul>
+<h4 id="2、解释-JavaScript-中的-null-和-undefined。"><a href="#2、解释-JavaScript-中的-null-和-undefined。" class="headerlink" title="2、解释 JavaScript 中的 null 和 undefined。"></a>2、解释 JavaScript 中的 null 和 undefined。</h4><ul>
+<li>Undefined类型只有一个值，即undefined。当声明的变量还未被初始化时，变量的默认值为undefined。</li>
+<li>Null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</li>
+</ul>
+<h3 id="3、两个页面如何进行通信、传值（不涉及框架），你了解哪几种方式？请简单说一下"><a href="#3、两个页面如何进行通信、传值（不涉及框架），你了解哪几种方式？请简单说一下" class="headerlink" title="3、两个页面如何进行通信、传值（不涉及框架），你了解哪几种方式？请简单说一下"></a>3、两个页面如何进行通信、传值（不涉及框架），你了解哪几种方式？请简单说一下</h3><ul>
+<li>URL传值方法，</li>
+<li>表单传值</li>
+<li>cookie方法传值</li>
+<li>session方法传值</li>
+</ul>
+<h3 id="4、vue中父子组件如何传值？"><a href="#4、vue中父子组件如何传值？" class="headerlink" title="4、vue中父子组件如何传值？"></a>4、vue中父子组件如何传值？</h3><ul>
+<li>父向子传值props，子组件props接收</li>
+<li>子传父$emit </li>
+</ul>
+<h3 id="5、熟悉原生js、jquey嘛，可以简单说一下两者分别都有哪些方法给元素绑定事件"><a href="#5、熟悉原生js、jquey嘛，可以简单说一下两者分别都有哪些方法给元素绑定事件" class="headerlink" title="5、熟悉原生js、jquey嘛，可以简单说一下两者分别都有哪些方法给元素绑定事件"></a>5、熟悉原生js、jquey嘛，可以简单说一下两者分别都有哪些方法给元素绑定事件</h3><p><strong>js：</strong> </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">标签内部绑定：</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"show()"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">属性赋值</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">document.getElementById('btn').onclick=hide</span><br><span class="line">事件监听:能同时绑定多个事件</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn2"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">document.getElementById('btn2').addEventListener('click',show)</span><br></pre></td></tr></table></figure>
+
+<p><strong>jquery：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#mybtn'</span>).bind(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$(<span class="string">'#mybtn2'</span>).live(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;&#125;)</span><br><span class="line">$(<span class="string">'#mybtn3'</span>).delegate(<span class="string">'li'</span>,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;&#125;)</span><br><span class="line">$(<span class="string">'#mybtn4'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="6、如何触发一个元素自身已有的事件"><a href="#6、如何触发一个元素自身已有的事件" class="headerlink" title="6、如何触发一个元素自身已有的事件"></a>6、如何触发一个元素自身已有的事件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHtml</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">$(<span class="string">'#btn'</span>).trigger(<span class="string">'getHtml'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7、可以简单说下事件委托吗？是利用什么原理实现的？有什么好处？"><a href="#7、可以简单说下事件委托吗？是利用什么原理实现的？有什么好处？" class="headerlink" title="7、可以简单说下事件委托吗？是利用什么原理实现的？有什么好处？"></a>7、可以简单说下事件委托吗？是利用什么原理实现的？有什么好处？</h3><ul>
+<li><p>提高性能</p>
+</li>
+<li><p>利用事件冒泡把事件添加到父级上，触发事件效果</p>
+</li>
+<li><p>支持同一个dom元素绑定多个事件</p>
+</li>
+</ul>
+<h3 id="8、简单介绍一下自己的项目，都用过哪些技术，有没有做过优化？解决过兼容性问题？"><a href="#8、简单介绍一下自己的项目，都用过哪些技术，有没有做过优化？解决过兼容性问题？" class="headerlink" title="8、简单介绍一下自己的项目，都用过哪些技术，有没有做过优化？解决过兼容性问题？"></a>8、简单介绍一下自己的项目，都用过哪些技术，有没有做过优化？解决过兼容性问题？</h3><h3 id="9、您的这个项目是几个人开发的，前后端人员占比大概是多少"><a href="#9、您的这个项目是几个人开发的，前后端人员占比大概是多少" class="headerlink" title="9、您的这个项目是几个人开发的，前后端人员占比大概是多少"></a>9、您的这个项目是几个人开发的，前后端人员占比大概是多少</h3><h3 id="10、简单说下vuex，vuex中的属性"><a href="#10、简单说下vuex，vuex中的属性" class="headerlink" title="10、简单说下vuex，vuex中的属性"></a>10、简单说下vuex，vuex中的属性</h3><p>VueX 是一个专门为 Vue.js 应用设计的状态管理<a href="http://lib.csdn.net/base/architecture" target="_blank" rel="noopener">架构</a>，统一管理和维护各个vue组件的可变化状态</p>
+<p>属性：</p>
+<ol>
+<li>state：vuex基本数据，储存变量</li>
+<li>geeter：从state派生的数据，相当于state的计算属性</li>
+<li>mutation：提交更新数据的方法，必须是同步的</li>
+<li>action：和mutation功能大致相同，不同之处是：action提交的是mutation，而不是直接变更状态。action可以包含任意异步操作</li>
+<li>modules：模块化vuex</li>
+</ol>
+<h3 id="11、做过原生js或jqueyr的项目嘛？能接受原生开发嘛？感觉自己的抗压能力咋样？"><a href="#11、做过原生js或jqueyr的项目嘛？能接受原生开发嘛？感觉自己的抗压能力咋样？" class="headerlink" title="11、做过原生js或jqueyr的项目嘛？能接受原生开发嘛？感觉自己的抗压能力咋样？"></a>11、做过原生js或jqueyr的项目嘛？能接受原生开发嘛？感觉自己的抗压能力咋样？</h3><h3 id="12、js中的原型链简单说一下"><a href="#12、js中的原型链简单说一下" class="headerlink" title="12、js中的原型链简单说一下"></a>12、js中的原型链简单说一下</h3><p>每个函数都有一个<code>_proto_</code>属性,这个属性可以去找它自己的原型，从而形成一个原型链。是</p>
+<h3 id="13、请简单列举几个操作数组和字符串中的方法"><a href="#13、请简单列举几个操作数组和字符串中的方法" class="headerlink" title="13、请简单列举几个操作数组和字符串中的方法"></a>13、请简单列举几个操作数组和字符串中的方法</h3><p><strong>数组：</strong></p>
+<ol>
+<li><p>push() 可以将一个或更多的参数添加到数组尾部，返回添加后的数组的长度，原数组变化</p>
+</li>
+<li><p>pop() 从数组尾部删除一个元素，返回这个被删除的元素，原数组变化</p>
+</li>
+<li><p>unshift() 将一个或更多的参数从数组头部添加，返回添加后的数组的长度，原数组变化</p>
+</li>
+<li><p>shift( ) 方法：从数组头部删除一个元素，返回这个被删除的元素，原数组发生改变。</p>
+<p><strong>字符串：</strong> </p>
+<ol>
+<li>concat() 将一个或多个字符串拼接，返回拼接得到的新的字符串</li>
+<li>split() 把一个字符串分割成字符串数组，返回一个字符串数组</li>
+<li>indexOf() 可返回某个指定的字符串值在字符串中首次出现的位置。</li>
+<li>substring() 方法用于提取字符串中介于两个指定下标之间的字符,返回新字符串</li>
+</ol>
+</li>
+</ol>
+<h3 id="14、有用过或了解过哪些第三方插件嘛？"><a href="#14、有用过或了解过哪些第三方插件嘛？" class="headerlink" title="14、有用过或了解过哪些第三方插件嘛？"></a>14、有用过或了解过哪些第三方插件嘛？</h3>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/04/06/移动项目/01-项目初始化/" data-toggle="tooltip" data-placement="top"
+                           title="移动项目/01-项目初始化">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/06/webapi6/" data-toggle="tooltip" data-placement="top"
+                           title="webapi6">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面试题"><span class="toc-text">面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、解释一下什么是回调函数"><span class="toc-text">1、解释一下什么是回调函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2、解释-JavaScript-中的-null-和-undefined。"><span class="toc-text">2、解释 JavaScript 中的 null 和 undefined。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、两个页面如何进行通信、传值（不涉及框架），你了解哪几种方式？请简单说一下"><span class="toc-text">3、两个页面如何进行通信、传值（不涉及框架），你了解哪几种方式？请简单说一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、vue中父子组件如何传值？"><span class="toc-text">4、vue中父子组件如何传值？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、熟悉原生js、jquey嘛，可以简单说一下两者分别都有哪些方法给元素绑定事件"><span class="toc-text">5、熟悉原生js、jquey嘛，可以简单说一下两者分别都有哪些方法给元素绑定事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、如何触发一个元素自身已有的事件"><span class="toc-text">6、如何触发一个元素自身已有的事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、可以简单说下事件委托吗？是利用什么原理实现的？有什么好处？"><span class="toc-text">7、可以简单说下事件委托吗？是利用什么原理实现的？有什么好处？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、简单介绍一下自己的项目，都用过哪些技术，有没有做过优化？解决过兼容性问题？"><span class="toc-text">8、简单介绍一下自己的项目，都用过哪些技术，有没有做过优化？解决过兼容性问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、您的这个项目是几个人开发的，前后端人员占比大概是多少"><span class="toc-text">9、您的这个项目是几个人开发的，前后端人员占比大概是多少</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、简单说下vuex，vuex中的属性"><span class="toc-text">10、简单说下vuex，vuex中的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、做过原生js或jqueyr的项目嘛？能接受原生开发嘛？感觉自己的抗压能力咋样？"><span class="toc-text">11、做过原生js或jqueyr的项目嘛？能接受原生开发嘛？感觉自己的抗压能力咋样？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、js中的原型链简单说一下"><span class="toc-text">12、js中的原型链简单说一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、请简单列举几个操作数组和字符串中的方法"><span class="toc-text">13、请简单列举几个操作数组和字符串中的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、有用过或了解过哪些第三方插件嘛？"><span class="toc-text">14、有用过或了解过哪些第三方插件嘛？</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 测试顺带笔记 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>

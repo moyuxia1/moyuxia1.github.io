@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姑姑">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="测试顺带笔记" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        webapi4｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2020/04/06/webapi4/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    测试顺带笔记
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>webapi4</h1>
+                    
+                    <span class="meta">
+                         作者 摸鱼侠
+                        <span>
+                          日期 2020-04-06
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            webapi4
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>课程回顾：</p>
+<p>​    排他思想：先把所有的样式清除，最后设置当前</p>
+<p>​    事件：onclick，ondblclick，onmouseenter，onmouseleave，onfocus，onblur</p>
+<p>​    节点：</p>
+<p>​            父节点：parentNode</p>
+<p>​            子节点：childNodes，children，firstElementChild，lastElementChild</p>
+<p>​            兄弟节点：nextElementSibling，previousElementSibling</p>
+<p>​            节点属性：nodeType，nodeName，nodeValue</p>
+<p>​        创建元素：</p>
+<p>​            document.createElement</p>
+<p>​            innerHTML</p>
+<p>​        追加元素：父元素.appendChild(子元素)</p>
+<p>​            </p>
+<h3 id="删除元素方法："><a href="#删除元素方法：" class="headerlink" title="删除元素方法："></a>删除元素方法：</h3><p>语法：<strong>父元素.removeChild(子元素);</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;p&gt;段落&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;span&gt;span&lt;&#x2F;span&gt;</span><br><span class="line">		&lt;img src&#x3D;&quot;a.jpg&quot;&gt;</span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">	&lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;点击&quot;&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">		&#x2F;&#x2F; 父元素.removeChild(子元素);</span><br><span class="line">		&#x2F;&#x2F; 获取元素</span><br><span class="line">		var btn &#x3D; document.querySelector(&#39;input&#39;);</span><br><span class="line">		var p &#x3D; document.querySelector(&#39;p&#39;);</span><br><span class="line">		var div &#x3D; document.querySelector(&#39;div&#39;);</span><br><span class="line"></span><br><span class="line">		btn.onclick &#x3D; function () &#123;</span><br><span class="line"></span><br><span class="line">			div.removeChild(p);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他元素方法："><a href="#其他元素方法：" class="headerlink" title="其他元素方法："></a>其他元素方法：</h3><h4 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h4><p>语法：<strong>父节点.insertBefore(新的节点,旧的子节点)</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">		&lt;li&gt;1&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;&#x2F;ul&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;点击&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">		&#x2F;&#x2F; 父节点.insertBefore(新的节点,旧的子节点)</span><br><span class="line">		var btn &#x3D; document.querySelector(&#39;input&#39;);</span><br><span class="line">		var li &#x3D; document.querySelector(&#39;li&#39;);</span><br><span class="line">		var ul &#x3D; document.querySelector(&#39;ul&#39;);</span><br><span class="line"></span><br><span class="line">		btn.onclick &#x3D; function () &#123;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 创建li</span><br><span class="line">			var newli &#x3D; document.createElement(&#39;li&#39;);</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 添加内容</span><br><span class="line">			newli.innerHTML &#x3D; &#39;哇哈哈&#39;;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 插入到ul</span><br><span class="line">			ul.insertBefore(newli, ul.childNodes[0]);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h4><p>语法：<strong>父节点.replaceChild(新的节点,旧的子节点)</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 父节点.insertBefore(新的节点,旧的子节点)</span><br><span class="line">		var btn &#x3D; document.querySelector(&#39;input&#39;);</span><br><span class="line">		var li &#x3D; document.querySelector(&#39;li&#39;);</span><br><span class="line">		var ul &#x3D; document.querySelector(&#39;ul&#39;);</span><br><span class="line"></span><br><span class="line">		btn.onclick &#x3D; function () &#123;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 创建li</span><br><span class="line">			var newli &#x3D; document.createElement(&#39;li&#39;);</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 添加内容</span><br><span class="line">			newli.innerHTML &#x3D; &#39;哇哈哈&#39;;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 插入到ul</span><br><span class="line">			&#x2F;&#x2F; ul.insertBefore(newli, ul.childNodes[0]);</span><br><span class="line">			ul.replaceChild(newli, li);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="克隆元素"><a href="#克隆元素" class="headerlink" title="克隆元素"></a>克隆元素</h4><p>语法：元素.cloneNode(true或false);  返回一份新的克隆后的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var btn &#x3D; document.querySelector(&#39;input&#39;);</span><br><span class="line">		var div &#x3D; document.querySelector(&#39;div&#39;);</span><br><span class="line"></span><br><span class="line">		btn.onclick &#x3D; function () &#123;</span><br><span class="line"></span><br><span class="line">			var newDiv &#x3D; div.cloneNode(true);</span><br><span class="line"></span><br><span class="line">			document.body.appendChild(newDiv);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+<p>案例：</p>
+<ol>
+<li>根据数组动态创建英雄(ul)列表</li>
+<li>微博发布</li>
+</ol>
+<p><strong>转换本地时间：时间对象.toLocaleString()</strong></p>
+<h2 id="事件监听："><a href="#事件监听：" class="headerlink" title="事件监听："></a>事件监听：</h2><h3 id="事件监听注册事件"><a href="#事件监听注册事件" class="headerlink" title="事件监听注册事件"></a>事件监听注册事件</h3><p>语法：<strong>事件源.addEventListener(‘事件类型’,事件处理程序,是否捕获);</strong> </p>
+<ol>
+<li>事件源 → 操作的元素</li>
+<li>事件类型→ 在此不加on,  onclick→click</li>
+<li>事件处理程序→ 函数</li>
+<li>是否捕获，可选参数，默认为false。 true→ 捕获，false→冒泡</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var btn &#x3D; document.querySelector(&#39;button&#39;);</span><br><span class="line">&#x2F;&#x2F; 事件监听注册事件</span><br><span class="line">btn.addEventListener(&#39;click&#39;,function()&#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="事件监听移除事件"><a href="#事件监听移除事件" class="headerlink" title="事件监听移除事件"></a>事件监听移除事件</h2><p>语法：元素.removeEventListener(‘事件类型’，事件处理程序名称);</p>
+<ul>
+<li>事件源，操作的元素</li>
+<li>事件类型，不加on</li>
+<li>事件处理程序的名字：函数名<ul>
+<li>注意：若将来要通过事件监听的方式移除事件时，之前注册事件<strong>要把事件处理程序单独抽取出来命名</strong> 。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var btn &#x3D; document.querySelector(&#39;button&#39;);</span><br><span class="line"> &#x2F;&#x2F; 事件监听注册事件</span><br><span class="line"> var fn1 &#x3D; function() &#123;</span><br><span class="line">   console.log(1);</span><br><span class="line"> &#125;;</span><br><span class="line"> var fn2 &#x3D; function() &#123;</span><br><span class="line">   console.log(2);</span><br><span class="line"> &#125;;</span><br><span class="line"> btn.addEventListener(&#39;click&#39;,fn1);</span><br><span class="line"> btn.addEventListener(&#39;click&#39;,fn2);</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F; 事件移除事件</span><br><span class="line"> btn.removeEventListener(&#39;click&#39;,fn2)</span><br><span class="line"> btn.removeEventListener(&#39;click&#39;,fn1)</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<p>​    注册事件：</p>
+<p>​            1、元素.onXXX = function () {}</p>
+<p>​            2、元素.addEventListener(‘事件类型不加on’,function () {});</p>
+<p>​    移除事件：</p>
+<p>​            1、元素.onXXX = null;</p>
+<p>​            2、元素.removeEventListener(‘事件类型不加on’,事件处理成的名称);</p>
+<h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><h3 id="什么是事件流"><a href="#什么是事件流" class="headerlink" title="什么是事件流"></a>什么是事件流</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">事件流 ：事件触发后的三个阶段（捕获阶段、&#x3D;&#x3D;目标阶段&#x3D;&#x3D;、&#x3D;&#x3D;冒泡阶段&#x3D;&#x3D;）。</span><br><span class="line"></span><br><span class="line">注意： 在事件触发后，这三个阶段始终是存在的，顺序① 先捕获，② 到达目标，③ 再冒泡。  但是在触发后，针对捕获和冒泡，仅仅启用一个。</span><br></pre></td></tr></table></figure>
+
+<img src="事件流.png">
+
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">事件冒泡：最先触发目标阶段→document</span><br><span class="line"></span><br><span class="line">事件冒泡：当事件发生后，事件会从目标元素开始一直冒泡到document</span><br></pre></td></tr></table></figure>
+
+<img src="冒泡.png">
+
+<h3 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件捕获：document→目标阶段;  反冒泡。了解即可</span><br></pre></td></tr></table></figure>
+
+<p>​    <img src="捕获.png"></p>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><h3 id="什么是事件对象"><a href="#什么是事件对象" class="headerlink" title="什么是事件对象"></a>什么是事件对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">事件对象，在事件&#x3D;&#x3D;触发后&#x3D;&#x3D; ，在&#x3D;&#x3D;事件处理程序中&#x3D;&#x3D; （函数体），所获取并操作的&#x3D;&#x3D;对象&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">事件对象：事件发生时的相关信息对象【event,ev,e】</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取事件对象"><a href="#获取事件对象" class="headerlink" title="获取事件对象"></a>获取事件对象</h3><blockquote>
+<ul>
+<li>语法：<strong><code>事件源.事件类型 = function(e){  // 第一个形参e就是事件对象    }</code></strong> </li>
+<li>代码：</li>
+</ul>
+</blockquote>
+<h3 id="鼠标事件对象相关属性"><a href="#鼠标事件对象相关属性" class="headerlink" title="鼠标事件对象相关属性"></a>鼠标事件对象相关属性</h3><p>鼠标事件对象相关属性-获取鼠标的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 事件对象.clientX   &#x2F;    事件对象.clientY    参照是&#x3D;&#x3D;浏览器&#x3D;&#x3D; </span><br><span class="line"></span><br><span class="line">- 事件对象.pageX   &#x2F;    事件对象.pageY    参照是&#x3D;&#x3D;文档&#x3D;&#x3D; </span><br><span class="line"></span><br><span class="line">- 事件对象.offsetX   &#x2F;    事件对象.offsetY    参照是&#x3D;&#x3D;当前的元素&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+
+<img src="鼠标位置.png">
+
+<h2 id="事件："><a href="#事件：" class="headerlink" title="事件："></a>事件：</h2><h3 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h3><ul>
+<li>事件类型<ul>
+<li>onkeydown    键盘按下事件</li>
+<li>onkeyup         键盘弹起事件</li>
+<li>注意：一般情况给document绑定键盘事件。</li>
+</ul>
+</li>
+<li>鼠标事件：<ul>
+<li>oninput</li>
+<li>onmousedown</li>
+<li>onmouseup</li>
+<li>onmousemove</li>
+<li>onmouseover：onmouseenter</li>
+<li>onmouseout：onmouseleave</li>
+<li>onmousover：支持事件冒泡</li>
+<li>onmouseenter：不支持事件冒泡</li>
+</ul>
+</li>
+</ul>
+<h3 id="键盘事件对象相关属性"><a href="#键盘事件对象相关属性" class="headerlink" title="键盘事件对象相关属性"></a>键盘事件对象相关属性</h3><p>键盘事件对象相关属性-键盘按下哪个键</p>
+<blockquote>
+<ul>
+<li>==事件对象.keyCode==     获取键盘按键对应的键码值</li>
+<li>事件对象.altKey        表示alt键是否按下，返回布尔值。</li>
+<li>事件对象.shiftKey        表示shift键是否按下，返回布尔值。</li>
+<li>==事件对象.ctrlKey==        表示ctrl键是否按下，返回布尔值。（true按下，false没有按下）</li>
+</ul>
+</blockquote>
+<h3 id="事件对象的公共属性和方法"><a href="#事件对象的公共属性和方法" class="headerlink" title="事件对象的公共属性和方法"></a>事件对象的公共属性和方法</h3><ul>
+<li>==事件对象.target==     获取最先触发的元素</li>
+<li>和this的区别<ul>
+<li>this在事件处理程序中始终代表的是事件源</li>
+<li>e.target 代表不一定是事件源，代表的是最先触发的元素【目标阶段→ document】</li>
+</ul>
+</li>
+</ul>
+<p>方法：</p>
+<blockquote>
+<ul>
+<li>事件对象.preventDefault();   阻止默认行为</li>
+<li>==事件对象.stopPropagation();==   停止冒泡传播</li>
+<li>【onmouseover支持冒泡，onmouseenter不支持冒泡】</li>
+</ul>
+</blockquote>
+<ol>
+<li>图片跟着鼠标移动</li>
+</ol>
+<p>课程回顾：</p>
+<p>​    删除元素：removeChild</p>
+<p>​    插入元素：inserBefore，替换元素：replaceChild，克隆元素：cloneNode</p>
+<p>​    <strong>事件注册：</strong></p>
+<p>​            1、元素.onXXX = function () {}</p>
+<p>​            2、元素.addEventListener(‘事件类型不加on’,function () {代码},捕获);</p>
+<p>​    <strong>事件移除：</strong></p>
+<p>​            1、元素.onXXX = null;</p>
+<p>​            2、元素.removeEventListener(‘事件类型不加on’,处理程序名称);</p>
+<p>​    <strong>事件流：事件触发后三个流程：捕获，目标，冒泡</strong></p>
+<p>​    <strong>事件对象：事件发生后的相关信息对象;事件源.事件类型 = function (e) {第一个形参就是事件对象}</strong></p>
+<p>​    获取鼠标信息：<strong>e.clientX，e.clientY，e.pageX，e.pageY</strong>，e.offsetX，e.offsetY</p>
+<p>​    事件：键盘（onkeydown，onkeyup），鼠标（onmousedown，onmouseup，onmousemove）</p>
+<p>​                onmouseover（支持事件冒泡）：onmouseenter（不支持事件冒泡）</p>
+<p>​                onmouseout：onmouseleave</p>
+<p>​    <strong>键盘信息：事件对象.keyCode</strong></p>
+<p>​    <strong>事件对象属性：事件对象.target【最先触发事件的元素】</strong></p>
+<p>​    方法：事件对象.preventDefault();   阻止默认行为==事件对象.stopPropagation();==   停止冒泡传播</p>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><h3 id="事件委托介绍"><a href="#事件委托介绍" class="headerlink" title="事件委托介绍"></a>事件委托介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">事件委托 （事件代理）：把子孙元素的事件注册，完全交给子孙元素的上级元素代理。</span><br><span class="line">注意：委托是下级元素委托上级元素。    没有上级委托下级</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何实现事件委托"><a href="#如何实现事件委托" class="headerlink" title="如何实现事件委托"></a>如何实现事件委托</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">① 给子孙元素的上级注册事件</span><br><span class="line"></span><br><span class="line">② 在事件处理程序中，通过&#x3D;&#x3D;事件对象.target&#x3D;&#x3D; 获取最先触发的元素</span><br><span class="line"></span><br><span class="line">③ 可以通过&#x3D;&#x3D;事件对象.target的nodeName&#x3D;&#x3D; 属性检测最先触发的是否是指定元素</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F; ① 给子孙元素的上级注册事件</span><br><span class="line">var ul &#x3D; document.querySelector(&#39;ul&#39;);</span><br><span class="line">ul.onclick &#x3D; function(e) &#123;</span><br><span class="line"> &#x2F;&#x2F; ② 在事件处理程序中，通过事件对象.target 获取最先触发的元素</span><br><span class="line"> var t &#x3D; e.target;</span><br><span class="line"> &#x2F;&#x2F; console.dir(t);</span><br><span class="line"> &#x2F;&#x2F; ③ 可以通过事件对象.target的nodeName 属性检测最先触发的是否是指定元素</span><br><span class="line"> if(t.nodeName&#x3D;&#x3D;&#39;LI&#39;) &#123;</span><br><span class="line">   console.log(t.innerText);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件委托的作用"><a href="#事件委托的作用" class="headerlink" title="事件委托的作用"></a>事件委托的作用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 减少事件的绑定，节省内存。</span><br><span class="line">- 上级元素可以代理未来新动态添加的元素。</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件委托的原理"><a href="#事件委托的原理" class="headerlink" title="事件委托的原理"></a>事件委托的原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 关键：事件对象.target； 可以获取最先触发的元素</span><br><span class="line">- 原理：因为事件冒泡的存在,我们才可以获取到最先触发的元素。【目标→ document】</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例:"></a>案例:</h3><p>事件委托的方式，给列表中的li注册事件</p>
+<h3 id="扩展：兼容写法"><a href="#扩展：兼容写法" class="headerlink" title="扩展：兼容写法"></a>扩展：兼容写法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 标准：事件处理程序中的第一个形参</span><br><span class="line"></span><br><span class="line">- IE低版本：window.event</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 兼容处理：</span><br><span class="line">document.onclick &#x3D; function (e) &#123;</span><br><span class="line">  var _e &#x3D; e || window.event;</span><br><span class="line">  &#x2F;&#x2F; 在js中，任何数据可以参与任何运算</span><br><span class="line">  &#x2F;&#x2F; 或运算格式：  左侧数据 || 右侧数据</span><br><span class="line">  &#x2F;&#x2F; 或运算结果是：左右其中一个数据</span><br><span class="line">  &#x2F;&#x2F; 运算规则：或运算运算的顺序是自左向右，若左侧是false或者将来能变成false,则输出右侧数据。否则输出左侧数据。</span><br><span class="line">  console.log(_e);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/04/06/webapi5/" data-toggle="tooltip" data-placement="top"
+                           title="webapi5">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/06/webapi3/" data-toggle="tooltip" data-placement="top"
+                           title="webapi3">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#删除元素方法："><span class="toc-text">删除元素方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他元素方法："><span class="toc-text">其他元素方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#插入元素"><span class="toc-text">插入元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#替换元素"><span class="toc-text">替换元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#克隆元素"><span class="toc-text">克隆元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件监听："><span class="toc-text">事件监听：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件监听注册事件"><span class="toc-text">事件监听注册事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件监听移除事件"><span class="toc-text">事件监听移除事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件流"><span class="toc-text">事件流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是事件流"><span class="toc-text">什么是事件流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件冒泡"><span class="toc-text">事件冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件捕获"><span class="toc-text">事件捕获</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件对象"><span class="toc-text">事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是事件对象"><span class="toc-text">什么是事件对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取事件对象"><span class="toc-text">获取事件对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标事件对象相关属性"><span class="toc-text">鼠标事件对象相关属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件："><span class="toc-text">事件：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘事件"><span class="toc-text">键盘事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘事件对象相关属性"><span class="toc-text">键盘事件对象相关属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象的公共属性和方法"><span class="toc-text">事件对象的公共属性和方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件委托"><span class="toc-text">事件委托</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托介绍"><span class="toc-text">事件委托介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何实现事件委托"><span class="toc-text">如何实现事件委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托的作用"><span class="toc-text">事件委托的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托的原理"><span class="toc-text">事件委托的原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-text">案例:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展：兼容写法"><span class="toc-text">扩展：兼容写法</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 测试顺带笔记 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
