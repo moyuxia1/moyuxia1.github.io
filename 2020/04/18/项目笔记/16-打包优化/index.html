@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姑姑">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="测试顺带笔记" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        项目笔记/16-打包优化｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2020/04/18/项目笔记/16-打包优化/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    测试顺带笔记
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>项目笔记/16-打包优化</h1>
+                    
+                    <span class="meta">
+                         作者 摸鱼侠
+                        <span>
+                          日期 2020-04-18
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            项目笔记/16-打包优化
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="十六、Vue-项目构建优化"><a href="#十六、Vue-项目构建优化" class="headerlink" title="十六、Vue 项目构建优化"></a>十六、Vue 项目构建优化</h1><p>大多数 Vue 项目是基于 VueCLI 搭建的，而 VueCLI 的底层建筑是 webpack。webpack 是现在主流的功能强大的模块化打包工具，在使用 webpack 时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为<strong>开发时打包构建速度慢</strong>、<strong>开发调试时的重复性工作</strong>、以及<strong>输出文件质量不高</strong>等，因此性能优化也主要从这些方面来分析。</p>
+<p>本文主要针对是在 Vue 项目中关于底层建筑 webpack 优化以及 Vue 本身相关的一些优化事宜。</p>
+<h2 id="把-VueCLI-升级到最新稳定版"><a href="#把-VueCLI-升级到最新稳定版" class="headerlink" title="把 VueCLI 升级到最新稳定版"></a>把 VueCLI 升级到最新稳定版</h2><p>尤其是 VueCLI 3 之前创建的项目，强烈建议升级到最新版 Vue CLI。</p>
+<h2 id="分析打包结果"><a href="#分析打包结果" class="headerlink" title="分析打包结果"></a>分析打包结果</h2><ul>
+<li>了解打包的内容</li>
+<li>找出最大的模块是什么</li>
+<li>查找错误到达的模块</li>
+<li>优化它！</li>
+</ul>
+<h3 id="vue-cli-service-build"><a href="#vue-cli-service-build" class="headerlink" title="vue-cli-service build"></a>vue-cli-service build</h3><blockquote>
+<p>参考：</p>
+<ul>
+<li><a href="https://cli.vuejs.org/zh/guide/cli-service.html#vue-cli-service-build" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/cli-service.html#vue-cli-service-build</a></li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">用法：vue-cli-service build [options] [entry|pattern]</span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line"></span><br><span class="line">  --mode        指定环境模式 (默认值：production)</span><br><span class="line">  --dest        指定输出目录 (默认值：dist)</span><br><span class="line">  --modern      面向现代浏览器带自动回退地构建应用</span><br><span class="line">  --target      app | lib | wc | wc-async (默认值：app)</span><br><span class="line">  --name        库或 Web Components 模式下的名字 (默认值：package.json 中的 &quot;name&quot; 字段或入口文件名)</span><br><span class="line">  --no-clean    在构建项目之前不清除目标目录</span><br><span class="line">  --report      生成 report.html 以帮助分析包内容</span><br><span class="line">  --report-json 生成 report.json 以帮助分析包内容</span><br><span class="line">  --watch       监听文件变化</span><br></pre></td></tr></table></figure>
+
+<p><code>vue-cli-service build</code> 会在 <code>dist/</code> 目录产生一个可用于生产环境的包，带有 JS/CSS/HTML 的压缩，和为更好的缓存而做的自动的 vendor chunk splitting。它的 chunk manifest 会内联在 HTML 里。</p>
+<p>这里还有一些有用的命令参数：</p>
+<ul>
+<li><code>--modern</code> 使用<a href="https://cli.vuejs.org/zh/guide/browser-compatibility.html#现代模式" target="_blank" rel="noopener">现代模式</a>构建应用，为现代浏览器交付原生支持的 ES2015 代码，并生成一个兼容老浏览器的包用来自动回退。</li>
+<li><code>--target</code> 允许你将项目中的任何组件以一个库或 Web Components 组件的方式进行构建。更多细节请查阅<a href="https://cli.vuejs.org/zh/guide/build-targets.html" target="_blank" rel="noopener">构建目标</a>。</li>
+<li><code>--report</code> 和 <code>--report-json</code> 会根据构建统计生成报告，它会帮助你分析包中包含的模块们的大小。<ul>
+<li>内部使用的 <a href="https://github.com/webpack-contrib/webpack-bundle-analyzer" target="_blank" rel="noopener">Webpack Bundle Analyzer</a> 插件。</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用图形界面打包"><a href="#使用图形界面打包" class="headerlink" title="使用图形界面打包"></a>使用图形界面打包</h3><blockquote>
+<p>自带分析功能</p>
+</blockquote>
+<p>在命令行中执行 <code>vue ui</code> 启动 VueCLI 图形界面。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue ui</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Gzip-压缩"><a href="#Gzip-压缩" class="headerlink" title="Gzip 压缩"></a>Gzip 压缩</h2><p>网站加载的速度很大程序取决于网站资源文件的大小，减少要传输的文件的大小可以使网站不仅加载更快，而且对于那些宽带是按量计费的用户来说也更友好。</p>
+<p>HTTP协议上的GZIP编码是一种用来改进WEB应用程序性能的技术。大流量的WEB站点常常使用GZIP<a href="https://baike.baidu.com/item/压缩技术" target="_blank" rel="noopener">压缩技术</a>来让用户感受更快的速度。这一般是指WWW服务器中安装的一个功能，当有人来访问这个服务器中的网站时，服务器中的这个功能就将网页内容压缩后传输到来访的电脑浏览器中显示出来.一般对纯文本内容可压缩到原大小的40%.这样传输就快了，效果就是你点击网址后会很快的显示出来.当然这也会增加服务器的负载. 一般服务器中都安装有这个功能模块的。</p>
+<p>Gzip 是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一种文件压缩格式。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>开启 Gzip 有什么好处？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Gzip 开启以后会将输出到用户浏览器的数据进行压缩的处理，这样就会减小通过网络传输的数据量，提高文件传输的速度。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：<code>gzip</code>不一定适用于所有文件的压缩。例如，文本文件压缩得非常好，通常会缩小两倍以上。另一方面，诸如JPEG或PNG文件之类的图像已经按其性质进行压缩，使用<code>gzip</code>压缩很难有好的压缩效果或者甚至没有效果。压缩文件会占用服务器资源，因此最好只压缩那些压缩效果好的文件。</p>
+<p>资源太小的文件也不会压缩。</p>
+</blockquote>
+<p>如何开启？</p>
+<p>不同服务器软件配置不一样，具体由部署项目的人负责，一般是运维、后端开发人员，如果想要自行配置，可自行百度查询。大多数服务器软件都是默认开启的。</p>
+<ul>
+<li>Nginx</li>
+<li>Tomcat</li>
+<li>Apache</li>
+<li>IIS</li>
+<li>…</li>
+</ul>
+<blockquote>
+<p>实际工作中，如果服务器软件没有开启，可以和负责运维部署的人员沟通。</p>
+</blockquote>
+<p>如何检测内容是否已开启了 Gzip 压缩？查看响应头中是否有下面的字段信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Encoding: gzip</span><br></pre></td></tr></table></figure>
+
+
+
+<p>前端没有调整配置服务器软件麻烦，该怎么测试？</p>
+<p>使用 VueCLI 官方推荐的 <a href="https://github.com/zeit/serve" target="_blank" rel="noopener">serve</a> 命令行工具。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、如果你已经安装了就不需要安装了</span></span><br><span class="line">npm install --global serve</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用该命令检测是否已安装或者是否安装成功，如果能看到输出一个版本号，则证明安装好了</span></span><br><span class="line">serve --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 Web 服务</span></span><br><span class="line">serve -s dist</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -u 参数禁用 Gzip 压缩</span></span><br><span class="line">serve -s -u ./</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gzip-压缩原理"><a href="#Gzip-压缩原理" class="headerlink" title="Gzip 压缩原理"></a>Gzip 压缩原理</h3><p>不是每个浏览器都支持gzip的，如何知道客户端是否支持gzip呢，请求头中有个 <code>Accept-Encoding</code> 来标识对压缩的支持。客户端http请求头声明浏览器支持的压缩方式，服务端配置启用压缩，压缩的文件类型，压缩方式。当客户端请求到服务端的时候，服务器解析请求头，如果客户端支持gzip压缩，响应时对请求的资源进行压缩并返回给客户端，浏览器按照自己的方式解析，在http响应头，我们可以看到 <code>Content-encoding: gzip</code>，这是指服务端使用了  <code>gzip</code> 的压缩方式。</p>
+<p><img src="/images/image-20191207183629949.png" alt="image-20191207183629949"></p>
+<blockquote>
+<p>在红色矩形区域右键选择：Response Headers &gt; Content-Encoding</p>
+</blockquote>
+<p><img src="/images/image-20191207183655734.png" alt="image-20191207183655734"></p>
+<blockquote>
+<p>然后就可以观测到所有请求记录的响应内容编码了。</p>
+</blockquote>
+<h2 id="在-Vue-CLI-中自定义-webpack-配置"><a href="#在-Vue-CLI-中自定义-webpack-配置" class="headerlink" title="在 Vue CLI 中自定义 webpack 配置"></a>在 Vue CLI 中自定义 webpack 配置</h2><blockquote>
+<p>参考文档：</p>
+<ul>
+<li><a href="https://cli.vuejs.org/zh/guide/webpack.html" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/webpack.html</a> </li>
+</ul>
+</blockquote>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><ul>
+<li><p>CDN 主要针对的静态资源</p>
+</li>
+<li><p>我们可以把我们自己的代码放到 CDN 上</p>
+</li>
+<li><p>也可以使用一些免费的第三方 CDN 服务</p>
+<ul>
+<li>一般提供的都是一些常用的第三方包的 CDN 服</li>
+<li>例如 bootcdn</li>
+</ul>
+</li>
+<li><p>我们最好把项目中比较大的第三方包都使用 CDN 链接</p>
+<ul>
+<li>不仅能提高构建的速度</li>
+<li>还能提高页面的响应速度</li>
+</ul>
+</li>
+<li><p>当我们在项目中使用 CDN 链接之后，就没必要下载打包第三方包了</p>
+</li>
+</ul>
+<h2 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h2><p>属于首屏加载优化的一种方案。</p>
+<p>默认情况下所有页面资源都会打包到一起，如果页面过多会导致单个文件体积过大。使用路由懒加载可以优化这种情况。它的思路就是把每个页面的资源都独立的生成一个资源文件，只有当访问到该页面的时候才会请求加载。</p>
+<h2 id="异步组件"><a href="#异步组件" class="headerlink" title="异步组件"></a>异步组件</h2><p>和路由懒加载是一个道理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> MyComponent <span class="keyword">from</span> <span class="string">'my-component'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="string">'my-component'</span>: MyComponent</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import MyComponent from 'my-component'</span></span><br><span class="line"><span class="keyword">const</span> MyComponent = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'my-component'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="comment">// 'my-component': MyComponent</span></span><br><span class="line">    <span class="string">'my-component'</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'my-component'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="prefetch"><a href="#prefetch" class="headerlink" title="prefetch"></a>prefetch</h2><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ" target="_blank" rel="noopener">link rel=”prefetch”</a> 是一种 resource hint，用来告诉浏览器在页面加载完成后，利用空闲时间提前获取用户未来可能会访问的内容。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"prefetch"</span> <span class="attr">href</span>=<span class="string">"./h5.html"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello Index page<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./h5.html"</span>&gt;</span>go to H5 Page<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，一个 Vue CLI 应用会为所有作为 async chunk 生成的 JavaScript 文件 (<a href="https://webpack.js.org/guides/code-splitting/#dynamic-imports" target="_blank" rel="noopener">通过动态 <code>import()</code> 按需 code splitting</a> 的产物) 自动生成 prefetch 提示。</p>
+<p>这些提示会被 <a href="https://github.com/vuejs/preload-webpack-plugin" target="_blank" rel="noopener">@vue/preload-webpack-plugin</a> 注入，并且可以通过 <code>chainWebpack</code> 的 <code>config.plugin(&#39;prefetch&#39;)</code> 进行修改和删除。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  chainWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 移除 prefetch 插件</span></span><br><span class="line">    config.plugins.delete(<span class="string">'prefetch'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 或者</span></span><br><span class="line">    <span class="comment">// 修改它的选项：</span></span><br><span class="line">    config.plugin(<span class="string">'prefetch'</span>).tap(<span class="function"><span class="params">options</span> =&gt;</span> &#123;</span><br><span class="line">      options[<span class="number">0</span>].fileBlacklist = options[<span class="number">0</span>].fileBlacklist || []</span><br><span class="line">      options[<span class="number">0</span>].fileBlacklist.push(<span class="regexp">/myasyncRoute(.)+?\.js$/</span>)</span><br><span class="line">      <span class="keyword">return</span> options</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当 prefetch 插件被禁用时，你可以通过 webpack 的内联注释手动选定要提前获取的代码区块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>(<span class="comment">/* webpackPrefetch: true */</span> <span class="string">'./someAsyncComponent.vue'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>webpack 的运行时会在父级区块被加载之后注入 prefetch 链接。</p>
+<blockquote>
+<p>提示</p>
+<p>Prefetch 链接将会消耗带宽。如果你的应用很大且有很多 async chunk，而用户主要使用的是对带宽较敏感的移动端，那么你可能需要关掉 prefetch 链接并手动选择要提前获取的代码区块。</p>
+</blockquote>
+<p>使用建议：</p>
+<ul>
+<li>如果是 PC 端项目建议默认开启</li>
+<li>如果是移动端项目建议关闭，帮用户节省流量</li>
+</ul>
+<h2 id="按需加载第三方组件"><a href="#按需加载第三方组件" class="headerlink" title="按需加载第三方组件"></a>按需加载第三方组件</h2><ul>
+<li>例如 Vant、element 都支持按需加载</li>
+</ul>
+<h2 id="缓存和并行处理"><a href="#缓存和并行处理" class="headerlink" title="缓存和并行处理"></a>缓存和并行处理</h2><p>VueCLI 内置了：</p>
+<ul>
+<li><code>cache-loader</code> 会默认为 Vue/Babel/TypeScript 编译开启。文件会缓存在 <code>node_modules/.cache</code> 中——如果你遇到了编译方面的问题，记得先删掉缓存目录之后再试试看。</li>
+<li><code>thread-loader</code> 会在多核 CPU 的机器上为 Babel/TypeScript 转译开启</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/04/18/项目笔记/17-移动App开发/" data-toggle="tooltip" data-placement="top"
+                           title="项目笔记/17-移动App开发">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/18/项目笔记/15-打包发布/" data-toggle="tooltip" data-placement="top"
+                           title="项目笔记/15-打包发布">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#十六、Vue-项目构建优化"><span class="toc-text">十六、Vue 项目构建优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#把-VueCLI-升级到最新稳定版"><span class="toc-text">把 VueCLI 升级到最新稳定版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析打包结果"><span class="toc-text">分析打包结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-cli-service-build"><span class="toc-text">vue-cli-service build</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用图形界面打包"><span class="toc-text">使用图形界面打包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gzip-压缩"><span class="toc-text">Gzip 压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Gzip-压缩原理"><span class="toc-text">Gzip 压缩原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-Vue-CLI-中自定义-webpack-配置"><span class="toc-text">在 Vue CLI 中自定义 webpack 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN"><span class="toc-text">CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由懒加载"><span class="toc-text">路由懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异步组件"><span class="toc-text">异步组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prefetch"><span class="toc-text">prefetch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按需加载第三方组件"><span class="toc-text">按需加载第三方组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存和并行处理"><span class="toc-text">缓存和并行处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-text">参考链接</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 测试顺带笔记 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>

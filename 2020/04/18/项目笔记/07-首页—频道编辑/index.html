@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="姑姑">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="测试顺带笔记" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        项目笔记/07-首页—频道编辑｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2020/04/18/项目笔记/07-首页—频道编辑/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    测试顺带笔记
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>项目笔记/07-首页—频道编辑</h1>
+                    
+                    <span class="meta">
+                         作者 摸鱼侠
+                        <span>
+                          日期 2020-04-18
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            项目笔记/07-首页—频道编辑
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="七、首页—频道编辑"><a href="#七、首页—频道编辑" class="headerlink" title="七、首页—频道编辑"></a>七、首页—频道编辑</h1><img src="/.com//1566541118035.png" width="300">
+
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="弹出层组件"><a href="#弹出层组件" class="headerlink" title="弹出层组件"></a>弹出层组件</h3><p>Vant 中内置了 <a href="https://youzan.github.io/vant/#/zh-CN/popup" target="_blank" rel="noopener">Popup 弹出层</a> 组件。</p>
+<p>1、在首页模板中的频道列表后面添加弹出层组件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-popup</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"isChannelEditShow"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">"bottom"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">closeable</span></span></span><br><span class="line"><span class="tag">  <span class="attr">close-icon-position</span>=<span class="string">"top-left"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:style</span>=<span class="string">"&#123; height: '100%' &#125;"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、然后在 <code>data</code>中添加一个数据用来控制弹层的显示和隐藏</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data () &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    isChannelEditShow: <span class="literal">true</span> <span class="comment">// 这里我们先设置为 true 就能看到弹窗的页面了</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试查看结果。</p>
+<h3 id="点击面包按钮展示弹出层"><a href="#点击面包按钮展示弹出层" class="headerlink" title="点击面包按钮展示弹出层"></a>点击面包按钮展示弹出层</h3><p>通过标签页的插槽插入一个面包菜单图标到频道列表中。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-tabs</span> <span class="attr">v-model</span>=<span class="string">"active"</span>&gt;</span></span><br><span class="line">+  <span class="tag">&lt;<span class="name">van-icon</span></span></span><br><span class="line"><span class="tag">+    <span class="attr">class</span>=<span class="string">"wap-nav"</span></span></span><br><span class="line"><span class="tag">+    <span class="attr">slot</span>=<span class="string">"nav-right"</span></span></span><br><span class="line"><span class="tag">+    <span class="attr">name</span>=<span class="string">"wap-nav"</span></span></span><br><span class="line"><span class="tag">+    @<span class="attr">click</span>=<span class="string">"isChannelEditShow = true"</span></span></span><br><span class="line"><span class="tag">+  /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">van-tab</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:title</span>=<span class="string">"channel.name"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"channel in userChannels"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:key</span>=<span class="string">"channel.id"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">article-list</span> <span class="attr">:channel</span>=<span class="string">"channel"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">van-tab</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">van-tabs</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：我们这里是把面包按钮通过 van-tabs 组件的 nav-right 插槽插入进去的。</p>
+</blockquote>
+<p>别忘了给它设置一下样式，定位到右侧不动：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wap-nav</span> &#123;</span><br><span class="line">	<span class="attribute">position</span>: fixed;</span><br><span class="line">	<span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">44px</span>;</span><br><span class="line">	<span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试查看结果。</p>
+<h3 id="频道编辑组件"><a href="#频道编辑组件" class="headerlink" title="频道编辑组件"></a>频道编辑组件</h3><p>1、创建 <code>views/home/components/channel-edit.vue</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"channel-edit"</span>&gt;</span>频道编辑<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">'ChannelEdit'</span>,</span></span><br><span class="line">  components: &#123;&#125;,</span><br><span class="line">  props: &#123;&#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;&#125;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;&#125;,</span><br><span class="line">  watch: &#123;&#125;,</span><br><span class="line">  created () &#123;&#125;,</span><br><span class="line">  mounted () &#123;&#125;,</span><br><span class="line">  methods: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、在首页中加载注册</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ChannelEdit <span class="keyword">from</span> <span class="string">'./components/channel-edit'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  components: &#123;</span><br><span class="line">    ...</span><br><span class="line">    ChannelEdit</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3、在弹出层中使用频道编辑组件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 频道编辑 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">van-popup</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"isChannelEditShow"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">"bottom"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">closeable</span></span></span><br><span class="line"><span class="tag">  <span class="attr">close-icon-position</span>=<span class="string">"top-left"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:style</span>=<span class="string">"&#123; height: '100%' &#125;"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">+  <span class="tag">&lt;<span class="name">channel-edit</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">van-popup</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /频道编辑 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="组件布局"><a href="#组件布局" class="headerlink" title="组件布局"></a>组件布局</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"channel-edit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-cell</span> <span class="attr">title</span>=<span class="string">"我的频道"</span> <span class="attr">:border</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">van-button</span> <span class="attr">size</span>=<span class="string">"mini"</span> <span class="attr">round</span> <span class="attr">type</span>=<span class="string">"danger"</span> <span class="attr">plain</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">van-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">van-cell</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-grid</span> <span class="attr">:gutter</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">van-grid-item</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-for</span>=<span class="string">"value in 8"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">"value"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">text</span>=<span class="string">"文字"</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">van-grid</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-cell</span> <span class="attr">title</span>=<span class="string">"推荐频道"</span> <span class="attr">:border</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-grid</span> <span class="attr">:gutter</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">van-grid-item</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-for</span>=<span class="string">"value in 8"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">"value"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">text</span>=<span class="string">"文字"</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">van-grid</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">'ChannelEdit'</span>,</span></span><br><span class="line">  components: &#123;&#125;,</span><br><span class="line">  props: &#123;&#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;&#125;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;&#125;,</span><br><span class="line">  watch: &#123;&#125;,</span><br><span class="line">  created () &#123;&#125;,</span><br><span class="line">  mounted () &#123;&#125;,</span><br><span class="line">  methods: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.channel-edit</span> &#123;</span></span><br><span class="line">  padding: 40px 0;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="展示我的频道"><a href="#展示我的频道" class="headerlink" title="展示我的频道"></a>展示我的频道</h2><p>1、父组件给子组件传递数据</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 频道编辑 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">van-popup</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"isChannelEditShow"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">position</span>=<span class="string">"bottom"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">closeable</span></span></span><br><span class="line"><span class="tag">  <span class="attr">close-icon-position</span>=<span class="string">"top-left"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:style</span>=<span class="string">"&#123; height: '100%' &#125;"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">channel-edit</span></span></span><br><span class="line"><span class="tag">+		<span class="attr">:user-channels</span>=<span class="string">"userChannels"</span></span></span><br><span class="line"><span class="tag">	/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">van-popup</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /频道编辑 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>2、在子组件中声明接收父组件的 <code>userChannels</code> 频道列表数据并遍历展示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"channel-edit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-cell</span> <span class="attr">title</span>=<span class="string">"我的频道"</span> <span class="attr">:border</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">van-button</span> <span class="attr">size</span>=<span class="string">"mini"</span> <span class="attr">round</span> <span class="attr">type</span>=<span class="string">"danger"</span> <span class="attr">plain</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">van-button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">van-cell</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-grid</span> <span class="attr">:gutter</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">van-grid-item</span></span></span><br><span class="line"><span class="tag">+        <span class="attr">v-for</span>=<span class="string">"channel in userChannels"</span></span></span><br><span class="line"><span class="tag">+        <span class="attr">:key</span>=<span class="string">"channel.id"</span></span></span><br><span class="line"><span class="tag">+        <span class="attr">:text</span>=<span class="string">"channel.name"</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">van-grid</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-cell</span> <span class="attr">title</span>=<span class="string">"推荐频道"</span> <span class="attr">:border</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-grid</span> <span class="attr">:gutter</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">van-grid-item</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-for</span>=<span class="string">"value in 8"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">"value"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">text</span>=<span class="string">"文字"</span></span></span><br><span class="line"><span class="tag">      /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">van-grid</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">'ChannelEdit'</span>,</span></span><br><span class="line">  components: &#123;&#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">+    userChannels: &#123;</span><br><span class="line"><span class="javascript">+      type: <span class="built_in">Array</span>,</span></span><br><span class="line"><span class="actionscript">+      required: <span class="literal">true</span></span></span><br><span class="line">+    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;&#125;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;&#125;,</span><br><span class="line">  watch: &#123;&#125;,</span><br><span class="line">  created () &#123;&#125;,</span><br><span class="line">  mounted () &#123;&#125;,</span><br><span class="line">  methods: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.channel-edit</span> &#123;</span></span><br><span class="line">  padding: 40px 0;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>简单写法：props: []</p>
+<p>推荐写法：props: {}</p>
+</blockquote>
+<h2 id="展示推荐频道列表"><a href="#展示推荐频道列表" class="headerlink" title="展示推荐频道列表"></a>展示推荐频道列表</h2><p><img src="/.com//1571040968593.png" alt="1571040968593"></p>
+<p>没有用来获取推荐频道的数据接口，但是我们有获取所有频道列表的数据接口。</p>
+<p>所以：<code>所有频道列表 - 我的频道 = 剩余推荐的频道</code>。</p>
+<p>实现过程所以一共分为两大步：</p>
+<ul>
+<li>获取所有频道</li>
+<li>基于所有频道和我的频道计算获取剩余的推荐频道</li>
+</ul>
+<h3 id="获取所有频道"><a href="#获取所有频道" class="headerlink" title="获取所有频道"></a>获取所有频道</h3><p>1、在 <code>src/api/channel.js</code> 中添加封装请求模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getAllChannels = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> request(&#123;</span><br><span class="line">    method: <span class="string">'GET'</span>,</span><br><span class="line">    url: <span class="string">'/app/v1_0/channels'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、请求获取所有频道</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">+ <span class="keyword">import</span> &#123; getAllChannels &#125; <span class="keyword">from</span> <span class="string">'@/api/channel'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'ChannelEdit'</span>,</span><br><span class="line">  components: &#123;&#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    userChannels: &#123;</span><br><span class="line">      type: <span class="built_in">Array</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">+      allChannels: [] <span class="comment">// 所有频道</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;&#125;,</span><br><span class="line">  watch: &#123;&#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">+    <span class="keyword">this</span>.loadAllChannels()</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted () &#123;&#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">+    <span class="keyword">async</span> loadAllChannels () &#123;</span><br><span class="line">+      <span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> getAllChannels()</span><br><span class="line">+      <span class="keyword">this</span>.allChannels = data.data.channels</span><br><span class="line">+    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="处理获取展示剩余推荐频道"><a href="#处理获取展示剩余推荐频道" class="headerlink" title="处理获取展示剩余推荐频道"></a>处理获取展示剩余推荐频道</h3><p>思路：<code>剩余频道 = 所有频道 - 我的频道</code></p>
+<ul>
+<li>遍历所有频道</li>
+<li>对每一个频道都判断：该频道是否属于我的频道</li>
+<li>如果不属于我的频道，则收集起来</li>
+<li>直到遍历结束，剩下来就是那些剩余的推荐频道</li>
+</ul>
+<p>1、封装一个<strong>计算属性</strong>用来获取剩余频道</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  remainingChannels () &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; allChannels, userChannels &#125; = <span class="keyword">this</span></span><br><span class="line">    <span class="comment">// 剩余频道 = 所有频道 - 我的频道</span></span><br><span class="line">    <span class="keyword">const</span> channels = []</span><br><span class="line">    <span class="comment">// 遍历所有频道</span></span><br><span class="line">    allChannels.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 如果我的频道中不包含当前被遍历的频道，则要</span></span><br><span class="line">      <span class="keyword">if</span> (!userChannels.find(<span class="function"><span class="params">c</span> =&gt;</span> c.id === item.id)) &#123;</span><br><span class="line">        channels.push(item)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> channels</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>2、模板绑定进行展示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-cell</span> <span class="attr">title</span>=<span class="string">"推荐频道"</span> <span class="attr">:border</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">van-grid</span> <span class="attr">:gutter</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">van-grid-item</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"channel in remainingChannels"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:key</span>=<span class="string">"channel.id"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:text</span>=<span class="string">"channel.name"</span></span></span><br><span class="line"><span class="tag">  /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">van-grid</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加频道"><a href="#添加频道" class="headerlink" title="添加频道"></a>添加频道</h2><img src="/.com//频道管理-添加频道.gif" alt="频道管理-添加频道" width="250">
+
+<p>思路：</p>
+<ul>
+<li>给推荐频道列表中每一项注册点击事件</li>
+<li>获取点击的频道项</li>
+<li>将频道项添加到我的频道中</li>
+<li><del>将当前点击的频道项从推荐频道中移除</del><ul>
+<li>不需要删除，因为我们获取数据使用的是计算属性，当我频道发生改变，计算属性重新求值了</li>
+</ul>
+</li>
+</ul>
+<p>1、给推荐频道中的频道注册点击事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 推荐频道 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">van-cell</span> <span class="attr">title</span>=<span class="string">"推荐频道"</span> <span class="attr">:border</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">van-grid</span> <span class="attr">:gutter</span>=<span class="string">"10"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">van-grid-item</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"channel in recommendChannels"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:key</span>=<span class="string">"channel.id"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:text</span>=<span class="string">"channel.name"</span></span></span><br><span class="line"><span class="tag">    + @<span class="attr">click</span>=<span class="string">"onChannelAdd(channel)"</span></span></span><br><span class="line"><span class="tag">  /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">van-grid</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /推荐频道 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、在添加频道事件处理函数中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">onChannelAdd (channel) &#123;</span><br><span class="line">  <span class="comment">// 将点击的频道项添加到我的频道列表中</span></span><br><span class="line">  <span class="keyword">this</span>.channels.push(channel)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 不需要删除，我的频道改变，计算属性 recommendChannels 重新调用求值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后你会神奇的发现点击的那个推荐频道跑到我的频道中了，我们并没有去手动的删除点击的这个推荐频道，但是它没了！主要是因为推荐频道是通过一个计算属性获取的，计算属性中使用了 channels（我的频道）数据，所以只要我的频道中的数据发生变化，那么计算属性就会重新运算获取最新的数据。</p>
+<h2 id="编辑频道"><a href="#编辑频道" class="headerlink" title="编辑频道"></a>编辑频道</h2><h3 id="处理编辑状态"><a href="#处理编辑状态" class="headerlink" title="处理编辑状态"></a>处理编辑状态</h3><p>1、在 data 中添加数据用来控制关闭按钮的显示隐藏</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data () &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    isEditShow: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2、通过组件插槽将关闭图标放到频道项中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-grid</span> <span class="attr">:gutter</span>=<span class="string">"10"</span> <span class="attr">clickable</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">van-grid-item</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"(channel, index) in userChannels"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:key</span>=<span class="string">"channel.id"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:text</span>=<span class="string">"channel.name"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">click</span>=<span class="string">"onUserChannelClick(index)"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">van-icon</span> <span class="attr">v-show</span>=<span class="string">"isEditShow &amp;&amp; index !== 0"</span> <span class="attr">slot</span>=<span class="string">"icon"</span> <span class="attr">name</span>=<span class="string">"close"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">van-grid-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">van-grid</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>3、将关闭的图标定位到频道项的右上角</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/deep/ .van-grid-item__icon-wrapper &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: -<span class="number">14px</span>;</span><br><span class="line">  <span class="attribute">right</span>: -<span class="number">5px</span>;</span><br><span class="line">  <span class="selector-class">.van-icon-close</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、处理编辑按钮</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-button</span></span></span><br><span class="line"><span class="tag">  <span class="attr">size</span>=<span class="string">"mini"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">round</span></span></span><br><span class="line"><span class="tag">  <span class="attr">type</span>=<span class="string">"danger"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">plain</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">click</span>=<span class="string">"isEditShow = !isEditShow"</span></span></span><br><span class="line"><span class="tag">&gt;</span>&#123;&#123; isEditShow ? '完成' : '编辑'&#125;&#125;<span class="tag">&lt;/<span class="name">van-button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最后测试。</p>
+<h3 id="删除频道"><a href="#删除频道" class="headerlink" title="删除频道"></a>删除频道</h3><p>两个功能需求：</p>
+<ul>
+<li>切换频道</li>
+<li>删除频道</li>
+</ul>
+<p>1、给我的频道中的频道项注册点击事件</p>
+<p>2、处理函数如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">onUserChannelClick (index) &#123;</span><br><span class="line">  <span class="comment">// 如果是编辑状态，则执行删除操作</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.isEditShow &amp;&amp; index !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.userChannels.splice(index, <span class="number">1</span>) <span class="comment">// 从索引处开始(包括索引本身)，删除指定的个数</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 如果是非编辑状态，则执行切换频道操作</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后测试结果。</p>
+<h3 id="切换频道"><a href="#切换频道" class="headerlink" title="切换频道"></a>切换频道</h3><p>1、在父组件中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">  这里使用 v-model 绑定了 active 数据</span></span><br><span class="line"><span class="comment">		子组件在内部需要声明 value 属性接收使用</span></span><br><span class="line"><span class="comment">		子组件需要在内部通过 this.$emit('input', 数据) 修改该数据</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">channel-edit</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:user-channels</span>=<span class="string">"userChannels"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">:value</span>=<span class="string">"active"</span></span></span><br><span class="line"><span class="tag">	@<span class="attr">input</span>=<span class="string">"active = $event"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">close</span>=<span class="string">"isChannelEditShow = false"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 这里的写法等价于上面的写法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">channel-edit</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:user-channels</span>=<span class="string">"userChannels"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">v-model</span>=<span class="string">"active"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">close</span>=<span class="string">"isChannelEditShow = false"</span></span></span><br><span class="line"><span class="tag">/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="[https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model](https://cn.vuejs.org/v2/guide/components-custom-events.html#自定义组件的-v-model)">在组件上使用 v-model</a></p>
+</blockquote>
+<p>2、然后在子组件中切换频道</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">onUserChannelClick (index) &#123;</span><br><span class="line">  <span class="comment">// 如果是编辑状态，则删除频道</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.isEditShow) &#123;</span><br><span class="line">    <span class="keyword">this</span>.userChannels.splice(index, <span class="number">1</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 如果是非编辑状态，则切换频道</span></span><br><span class="line">    <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, index) <span class="comment">// 修改激活的标签</span></span><br><span class="line">    <span class="keyword">this</span>.$emit(<span class="string">'close'</span>) <span class="comment">// 关闭弹层</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、最后测试结果</p>
+<h2 id="频道数据持久化"><a href="#频道数据持久化" class="headerlink" title="频道数据持久化"></a>频道数据持久化</h2><p>正常的话我们需要调用接口对数据进行持久化存储，但是这里的项目接口暂时有问题。</p>
+<p>我们这里先用本地存储来处理一下。</p>
+<p>1、当我们添加或是删除频道的时候都需要对频道数据进行持久化，一种方式就是在分别在添加和删除或者比的修改 channels 数据变化的地方调用本次存储存储数据；一种方式，我们可以使用 Vue 中的 watch 功能来监视频道数据的变化，当数据发生改变，就把数据重新存储到本地存储。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; getItem, setItem &#125; <span class="keyword">from</span> <span class="string">"@/utils/storage"</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="comment">// 当 userChannels 发生改变的时候，将该数据存储到本地存储</span></span><br><span class="line">  userChannels () &#123;</span><br><span class="line">    setItem(<span class="string">'user-channels'</span>, <span class="keyword">this</span>.userChannels)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>2、因为我们把数据持久化到了本次存储，所以我们需要在页面初始化的时候优先从本地存储来获取频道数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单一句话：优先使用本地的，没有就使用线上的</span></span><br><span class="line"><span class="keyword">async</span> loadUserChannels () &#123;</span><br><span class="line">  <span class="comment">// 1. 定义一个变量用来存储频道列表</span></span><br><span class="line">  <span class="keyword">let</span> channels = []</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. 获取本地存储的频道列表</span></span><br><span class="line">  <span class="keyword">const</span> localUserChannles = getItem(<span class="string">'user-channels'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 3. 如果本地存储有，就使用本地存储的</span></span><br><span class="line">  <span class="keyword">if</span> (localUserChannles) &#123;</span><br><span class="line">    channels = localUserChannles</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 4. 如果本地存储没有，则请求获取接口推荐的频道列表</span></span><br><span class="line">    <span class="keyword">const</span> &#123; data &#125; = <span class="keyword">await</span> getUserChannels()</span><br><span class="line">    channels = data.data.channels</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 5. 最后，把数据赋值到当前组件中</span></span><br><span class="line">  <span class="keyword">this</span>.userChannels = channels</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2020/04/18/项目笔记/08-文章搜索/" data-toggle="tooltip" data-placement="top"
+                           title="项目笔记/08-文章搜索">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2020/04/18/项目笔记/06-首页—文章列表/" data-toggle="tooltip" data-placement="top"
+                           title="项目笔记/06-首页—文章列表">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#七、首页—频道编辑"><span class="toc-text">七、首页—频道编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#弹出层组件"><span class="toc-text">弹出层组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点击面包按钮展示弹出层"><span class="toc-text">点击面包按钮展示弹出层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#频道编辑组件"><span class="toc-text">频道编辑组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件布局"><span class="toc-text">组件布局</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展示我的频道"><span class="toc-text">展示我的频道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#展示推荐频道列表"><span class="toc-text">展示推荐频道列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取所有频道"><span class="toc-text">获取所有频道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理获取展示剩余推荐频道"><span class="toc-text">处理获取展示剩余推荐频道</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加频道"><span class="toc-text">添加频道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑频道"><span class="toc-text">编辑频道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#处理编辑状态"><span class="toc-text">处理编辑状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除频道"><span class="toc-text">删除频道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#切换频道"><span class="toc-text">切换频道</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频道数据持久化"><span class="toc-text">频道数据持久化</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 测试顺带笔记 2020
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/" target="_blank" rel="noopener">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
